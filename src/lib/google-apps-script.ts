@@ -44,7 +44,7 @@ export async function fetchMenuFromAppsScript(): Promise<MenuItem[]> {
   const json = await response.json();
   const rows = Array.isArray(json) ? json : json.items ?? json.data;
   if (!Array.isArray(rows)) throw new Error("Unexpected Apps Script menu response");
-  return rows
+  const result = rows
     .filter((row) => row && typeof row === "object")
     .map((row, index) => toMenuItem(row as Record<string, unknown>, index))
     .filter((item) => {
@@ -52,6 +52,8 @@ export async function fetchMenuFromAppsScript(): Promise<MenuItem[]> {
       if (item.name.toLowerCase().startsWith("menu item")) return false;
       return true;
     });
+  if (result.length === 0) return fallbackMenu;
+  return result;
 }
 export async function submitOrderToAppsScript(order: OrderPayload, orderId: string): Promise<void> {
   const url = process.env.GOOGLE_APPS_SCRIPT_URL;
