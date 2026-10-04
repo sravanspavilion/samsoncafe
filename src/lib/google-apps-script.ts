@@ -62,8 +62,44 @@ export async function submitOrderToAppsScript(order: OrderPayload, orderId: stri
   const response = await fetch(url, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ action: "createOrder", orderId, ...order }) });
   if (!response.ok) throw new Error("Apps Script order request failed");
 }
+
+function groupOrderRecords(records: OrderRecord[]) {
+  const map = new Map<string, import("@/types").OrderHistoryItem>();
+  for (const rec of records) {
+    if (!map.has(rec.orderId)) {
+      map.set(rec.orderId, {
+        orderId: rec.orderId,
+        time: rec.time,
+        items: [],
+        total: 0,
+        status: "preparing" as const,
+      });
+    }
+    const entry = map.get(rec.orderId)!;
+    entry.items.push({ itemId: rec.itemId, name: rec.name, quantity: rec.quantity, price: rec.price / rec.quantity || rec.price });
+    entry.total += rec.price;
+  }
+  return Array.from(map.values());
+}
+
+export async function fetchOrdersFromAppsScript(): Promise<import("@/types").OrderHistoryItem[]> {
+  const url = process.env.GOOGLE_APPS_SCRIPT_URL;
+  if (!url) return groupOrderRecords(fallbackOrders);
+  try {
+    const response = await fetch(`${url}?action=orders`, { cache: "no-store" });
+    if (!response.ok) throw new Error("Apps Script orders request failed");
+    const json = await response.json();
+    const rows = Array.isArray(json) ? json : json.items ?? json.data;
+    if (!Array.isArray(rows)) throw new Error("Unexpected Apps Script orders response");
+    return rows as import("@/types").OrderHistoryItem[];
+  } catch {
+    return groupOrderRecords(fallbackOrders);
+  }
+}
+
 export const fallbackOrders: OrderRecord[] = [
   { orderId: "SC-20261004-001", time: "04 Oct, 10:24 AM", itemId: "COF-002", name: "Cappuccino", quantity: 2, price: 180 },
   { orderId: "SC-20261004-002", time: "04 Oct, 09:48 AM", itemId: "COF-004", name: "Cold Brew", quantity: 1, price: 130 },
   { orderId: "SC-20261004-003", time: "03 Oct, 06:12 PM", itemId: "PAS-002", name: "Dark Chocolate Tart", quantity: 1, price: 180 }
 ];
+export const fallbackOrdersGrouped = groupOrderRecords(fallbackOrders);

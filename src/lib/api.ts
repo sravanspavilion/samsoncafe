@@ -1,10 +1,17 @@
-import type { MenuItem, OrderPayload } from "@/types";
+import type { MenuItem, OrderHistoryItem, OrderPayload } from "@/types";
 
 export async function getMenu(): Promise<MenuItem[]> {
   const response = await fetch("/api/menu", { cache: "no-store" });
   if (!response.ok) throw new Error("The menu is unavailable right now.");
   return response.json();
 }
+
+export async function getOrders(): Promise<OrderHistoryItem[]> {
+  const response = await fetch("/api/orders", { cache: "no-store" });
+  if (!response.ok) throw new Error("Orders are unavailable right now.");
+  return response.json();
+}
+
 export async function placeOrder(order: OrderPayload) {
   const response = await fetch("/api/orders", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(order) });
   const data = await response.json();
