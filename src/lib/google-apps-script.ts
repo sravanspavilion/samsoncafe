@@ -28,7 +28,7 @@ function toMenuItem(row: Record<string, unknown>, index: number): MenuItem {
     imageStr = "/images/menu/espresso.png";
   }
   const category = String(row.CATEGORY ?? row.category ?? "Other").trim() || "Other";
-  const description = String(row.DESCRIPTION ?? row.description ?? "A carefully prepared Samsons Cafe selection.").trim();
+  const description = String(row.DESCRIPTION ?? row.description ?? "").trim();
   const statusRaw = String(row.STATUS ?? row.status ?? "available").toLowerCase();
   const status = statusRaw === "available" && stock > 0 ? "available" : "unavailable";
   return { id, name, price, image: imageStr, stock, status, category, description };

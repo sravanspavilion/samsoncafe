@@ -1,6 +1,6 @@
 export type MenuItem = {
   id: string; name: string; price: number; image: string; stock: number;
-  status: "available" | "unavailable"; category: string; description: string; featured?: boolean;
+  status: "available" | "unavailable"; category: string; description?: string; featured?: boolean;
 };
 
 export type CartLine = MenuItem & { quantity: number };
