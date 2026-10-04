@@ -20,7 +20,7 @@ export default function MenuPage() { const [menu, setMenu] = useState<MenuItem[]
                   <input
                     value={search}
                     onChange={(event) => setSearch(event.target.value)}
-                    className="input-luxury pl-11"
+                    className="input-luxury pl-14"
                     placeholder="Search coffee or beverages..."
                     autoComplete="off"
                     spellCheck="false"
