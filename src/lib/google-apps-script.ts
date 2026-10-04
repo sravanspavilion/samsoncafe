@@ -1,14 +1,16 @@
 import type { MenuItem, OrderPayload, OrderRecord } from "@/types";
 
 export const fallbackMenu: MenuItem[] = [
-  { id: "COF-001", name: "Espresso", price: 60, image: "/images/menu/espresso.png", stock: 35, status: "available", category: "Hot", description: "Double ristretto pull of Arabica Bourbon with molasses and dark cocoa.", featured: true },
-  { id: "COF-002", name: "Cappuccino", price: 90, image: "/images/menu/latte.png", stock: 18, status: "available", category: "Hot", description: "Silken milk and a balanced house espresso, finished with delicate art.", featured: true },
-  { id: "COF-003", name: "Café Latte", price: 110, image: "/images/menu/latte.png", stock: 12, status: "available", category: "Hot", description: "A velvety, contemplative classic with our slow-roasted espresso.", featured: true },
-  { id: "COF-004", name: "Cold Brew", price: 130, image: "/images/menu/cold-brew.png", stock: 7, status: "available", category: "Cold", description: "Twelve-hour steep, served crystalline and naturally sweet.", featured: true },
-  { id: "COF-005", name: "Vanilla Iced Latte", price: 150, image: "/images/menu/cold-brew.png", stock: 4, status: "available", category: "Cold", description: "House vanilla, espresso and chilled milk over clear ice." },
-  { id: "SMO-001", name: "Midnight Berry", price: 160, image: "/images/menu/cold-brew.png", stock: 9, status: "available", category: "Smoothies", description: "Dark berries, yogurt and a touch of wildflower honey." },
-  { id: "PAS-001", name: "Almond Croissant", price: 120, image: "/images/menu/latte.png", stock: 0, status: "unavailable", category: "Pastries", description: "Buttery laminated pastry with roasted almond frangipane." },
-  { id: "PAS-002", name: "Dark Chocolate Tart", price: 180, image: "/images/menu/espresso.png", stock: 3, status: "available", category: "Pastries", description: "A rich valrhona ganache tart with a crisp cacao shell." }
+  { id: "COF-001", name: "Espresso", price: 60, image: "https://res.cloudinary.com/imz1gwe6/image/upload/f_auto,q_auto/espresso", stock: 34, status: "available", category: "HOT", description: "" },
+  { id: "COF-002", name: "Cappuccino", price: 90, image: "", stock: 33, status: "available", category: "HOT", description: "" },
+  { id: "COF-003", name: "Café Latte", price: 110, image: "", stock: 35, status: "available", category: "HOT", description: "" },
+  { id: "COF-004", name: "Flat White", price: 120, image: "", stock: 35, status: "available", category: "HOT", description: "" },
+  { id: "COF-005", name: "Café Mocha", price: 120, image: "", stock: 35, status: "available", category: "HOT", description: "" },
+  { id: "COF-006", name: "Caramel Macchiato", price: 130, image: "", stock: 35, status: "available", category: "HOT", description: "" },
+  { id: "COF-007", name: "Iced Shaken Espresso", price: 120, image: "", stock: 35, status: "available", category: "COLD", description: "" },
+  { id: "COF-008", name: "Cold Brew", price: 110, image: "", stock: 34, status: "available", category: "COLD", description: "" },
+  { id: "SMO-001", name: "Banana Smoothies", price: 150, image: "", stock: 34, status: "available", category: "COLD", description: "" },
+  { id: "SMO-002", name: "Kiwi Smoothies", price: 180, image: "", stock: 35, status: "available", category: "COLD", description: "" }
 ];
 
 function toMenuItem(row: Record<string, unknown>, index: number): MenuItem {
