@@ -47,7 +47,11 @@ export async function fetchMenuFromAppsScript(): Promise<MenuItem[]> {
   return rows
     .filter((row) => row && typeof row === "object")
     .map((row, index) => toMenuItem(row as Record<string, unknown>, index))
-    .filter((item) => Boolean(item.id) && item.id !== "undefined" && item.id !== "null");
+    .filter((item) => {
+      if (!item.id || item.id === "undefined" || item.id === "null") return false;
+      if (item.name.toLowerCase().startsWith("menu item")) return false;
+      return true;
+    });
 }
 export async function submitOrderToAppsScript(order: OrderPayload, orderId: string): Promise<void> {
   const url = process.env.GOOGLE_APPS_SCRIPT_URL;
