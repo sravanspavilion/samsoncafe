@@ -15,12 +15,12 @@ export default function MenuPage() { const [menu, setMenu] = useState<MenuItem[]
     const text = `${item.name} ${item.description || ""}`.toLowerCase();
     return text.includes(searchTerm);
   }), [menu, category, search]); return <><Header /><main className="page-shell"><div className="container-luxury py-12 md:py-16"><div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end"><SectionHeading eyebrow="Samsons Private Reserve & Atelier" title="Curated Menu" description="Artisanal single-origin espresso, slow-steeped extractions, and velvety crafted treats poured to perfection." /><div className="panel flex items-center gap-3 rounded-xl px-4 py-3"><i className="size-2 rounded-full bg-[#c8a261]" /><span className="text-[10px] font-bold tracking-widest text-muted">BARISTA AT WORK</span></div></div>{status === "ready" && <div className="mt-12 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between"><CategoryFilters categories={categories} value={category} onChange={setCategory} /><label className="relative block lg:w-80">
-                  <Search aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#a8988b]" size={18} />
+                  <Search aria-hidden="true" className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-[#a8988b]" size={18} />
                   <span className="sr-only">Search menu</span>
                   <input
                     value={search}
                     onChange={(event) => setSearch(event.target.value)}
-                    className="input-luxury pl-14"
+                    className="input-luxury pl-16"
                     placeholder="Search coffee or beverages..."
                     autoComplete="off"
                     spellCheck="false"
