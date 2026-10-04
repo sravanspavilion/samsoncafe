@@ -1,0 +1,4 @@
+import { fallbackOrders } from "@/lib/google-apps-script";
+import { formatINR } from "@/lib/utils";
+import { AdminTable } from "@/components/admin/AdminTable";
+export default function OrdersPage() { return <><span className="text-[10px] font-bold tracking-[.22em] text-[#c8a261]">ORDER RECORDS</span><h1 className="serif mt-3 text-4xl">Orders</h1><p className="mt-3 text-sm text-muted">Temporary records shown until the Apps Script order-reading endpoint is confirmed.</p><div className="mt-8"><AdminTable headers={["ORDER ID", "TIME", "ITEM ID", "NAME", "QUANTITY", "PRICE"]}>{fallbackOrders.map((order) => <tr key={order.orderId}><td className="px-5 py-4 text-[#e9c07c]">{order.orderId}</td><td className="px-5 py-4">{order.time}</td><td className="px-5 py-4">{order.itemId}</td><td className="px-5 py-4">{order.name}</td><td className="px-5 py-4">{order.quantity}</td><td className="px-5 py-4">{formatINR(order.price)}</td></tr>)}</AdminTable></div></>; }

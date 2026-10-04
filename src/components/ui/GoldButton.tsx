@@ -1,0 +1,3 @@
+import { cn } from "@/lib/utils";
+import type { ButtonHTMLAttributes } from "react";
+export function GoldButton({ className, variant = "solid", ...props }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "solid" | "outline" }) { return <button className={cn("inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-xs font-bold tracking-[.12em] transition-all disabled:cursor-not-allowed disabled:opacity-40", variant === "solid" ? "bg-[#c8a261] text-[#241a00] hover:bg-[#e5c158] hover:shadow-[0_0_24px_-4px_rgba(200,162,97,.5)]" : "border border-[#c8a261] text-[#e9c07c] hover:bg-[#c8a261] hover:text-[#241a00]", className)} {...props} />; }

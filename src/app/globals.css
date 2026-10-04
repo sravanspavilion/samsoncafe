@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root { --canvas:#0b0908; --surface:#120e0c; --panel:#1c1512; --raised:#261e1a; --gold:#c8a261; --gold-bright:#e5c158; --cream:#faf6f0; --muted:#a8988b; --line:#3d312a; }
+* { border-color: var(--line); }
+html { background:var(--canvas); scroll-behavior:smooth; }
+body { margin:0; background:var(--canvas); color:var(--cream); font-family:var(--font-outfit), Arial, sans-serif; }
+button, a, input, textarea { -webkit-tap-highlight-color:transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline:2px solid var(--gold-bright); outline-offset:3px; }
+.serif { font-family:var(--font-playfair), Georgia, serif; }
+.page-shell { min-height:calc(100vh - 5rem); background:radial-gradient(ellipse 60% 25% at 50% 0%, rgba(200,162,97,.07), transparent 70%), var(--canvas); }
+.container-luxury { width:min(100% - 2rem, 1344px); margin-inline:auto; }
+.gold-line { height:1px; width:2rem; background:var(--gold); display:inline-block; }
+.panel { background:var(--surface); border:1px solid var(--line); box-shadow:0 20px 40px -20px rgba(0,0,0,.8); }
+.gold-glow:hover { box-shadow:0 0 24px -4px rgba(200,162,97,.28); }
+.text-muted { color:var(--muted); }
+.input-luxury { width:100%; border:1px solid var(--line); border-radius:.75rem; background:var(--canvas); color:var(--cream); padding:.8rem 1rem; }
+.input-luxury::placeholder { color:var(--muted); }
+.input-luxury:focus { border-color:var(--gold); outline:none; box-shadow:0 0 0 3px rgba(200,162,97,.1); }
+@media (min-width:768px) { .container-luxury { width:min(100% - 4rem, 1344px); } }

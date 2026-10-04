@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline-variant":"#4e4639","on-error-container":"#ffdad6","primary-fixed":"#ffdeaa","on-tertiary":"#372f2a","surface-container":"#231f1c","inverse-on-surface":"#352f2d","on-primary-fixed-variant":"#5d4208","primary":"#e9c07c","on-surface":"#ebe0dc","surface":"#171210","surface-container-lowest":"#110d0b","surface-container-low":"#1f1b18","on-tertiary-fixed-variant":"#4f4540","on-secondary":"#3d2f00","on-primary-container":"#523800","surface-container-highest":"#393431","on-tertiary-container":"#453b36","on-secondary-container":"#fff3dc","surface-bright":"#3e3835","secondary-fixed":"#ffe08b","background":"#171210","on-secondary-fixed-variant":"#584400","surface-variant":"#393431","secondary-container":"#896c00","tertiary-container":"#b3a59f","primary-container":"#c8a261","surface-tint":"#e9c07c","surface-container-high":"#2e2927","on-background":"#ebe0dc","error":"#ffb4ab","tertiary":"#d2c4bd","secondary":"#e7c35a","primary-fixed-dim":"#e9c07c","on-primary":"#422c00","inverse-primary":"#785920","tertiary-fixed":"#efdfd9","surface-dim":"#171210","on-surface-variant":"#d1c5b4","outline":"#9a8f80","on-error":"#690005","secondary-fixed-dim":"#e7c35a","error-container":"#93000a","on-secondary-fixed":"#241a00","on-primary-fixed":"#271900","on-tertiary-fixed":"#221a16","tertiary-fixed-dim":"#d2c4bd","inverse-surface":"#ebe0dc"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{gutter:"1.5rem","space-lg":"1.5rem",margin:"3rem","space-xl":"2.5rem","space-sm":"0.5rem","space-xs":"0.25rem","space-md":"1rem"},fontFamily:{"body-md":["Outfit"],"headline-md":["Playfair Display"],"label-md":["Outfit"],"title-lg":["Outfit"],"headline-lg":["Playfair Display"],"body-lg":["Outfit"],"headline-lg-mobile":["Playfair Display"],"display-lg":["Playfair Display"],"headline-sm":["Playfair Display"],"display-lg-mobile":["Playfair Display"],"title-md":["Outfit"],"label-sm":["Outfit"]},fontSize:{"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"headline-md":["28px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"500"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.08em",fontWeight:"600"}],"title-lg":["18px",{lineHeight:"26px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.01em",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"26px",letterSpacing:"0em",fontWeight:"400"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"500"}],"display-lg":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-sm":["22px",{lineHeight:"30px",letterSpacing:"0.01em",fontWeight:"600"}],"display-lg-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-md":["16px",{lineHeight:"24px",letterSpacing:"0.01em",fontWeight:"500"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.12em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-[#140F0D]/90 backdrop-blur-xl border-b border-primary-container/25"><div class="h-20 max-w-[1440px] mx-auto px-8 lg:px-12 flex items-center justify-between"><a class="flex items-center gap-4 group" data-path="home" href="#"><img alt="Samsons Cafe Monogram Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XXXPwQ2W5NlTuXML_FbL-0EAeJ9ECeO0DmZLDur-VTDGbqapSBccyRqdOztTnOtUnAO7isPlVbcvjrHt6ORHdMVEYl8UsNbi1qGCJhAFzLFDVXG-nI7rrp1SPj6xnj5hMgJ6E2dA79J77Q4xMcr0CIYJxduB9XM3CruUZwQzjrzAJGT1bBXJfqq9cdyu14y41gtYlB5sqwWSL8QQMlZDgIml50Amgw8SxU0JsPvQQVAWiYMdA"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-wide leading-none">SAMSONS CAFE</span><span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.25em] mt-1">CAFE &amp; ROASTERY</span></div></a><nav class="hidden md:flex items-center gap-10" data-active-classes="text-primary relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:rounded-full after:bg-primary after:shadow-[0_0_8px_#c8a261] font-medium"><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors py-1" data-path="home" href="#">HOME</a><a aria-current="page" class="uppercase transition-colors py-1 text-primary relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:rounded-full after:bg-primary after:shadow-[0_0_8px_#c8a261] font-medium" data-path="menu" href="#">MENU</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors py-1" data-path="my-order" href="#">MY ORDER</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors py-1" data-path="payments" href="#">PAYMENTS</a></nav><div class="flex items-center gap-5"><a class="relative p-2.5 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-primary flex items-center justify-center" data-path="my-order" href="#"><span class="material-symbols-outlined text-[22px]">local_mall</span><span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold ring-2 ring-[#140F0D]">2</span></a><a class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-primary-container text-primary font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-all shadow-[0_0_15px_-3px_rgba(200,162,97,0.15)]" data-path="my-order" href="#"><span>MY ORDER</span><span class="opacity-75">(₹200)</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]"><div class="flex flex-col w-full">
+<!-- ATMOSPHERIC BACKGROUND TONE -->
+<div class="relative w-full bg-surface-container-lowest overflow-hidden">
+<!-- Subtle Golden Radial Illumination Aura -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[360px] bg-primary/5 rounded-full blur-[140px] pointer-events-none"></div>
+<!-- MAIN WRAPPER: Max 1440px Canvas -->
+<div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 py-10 lg:py-14">
+<!-- SECTION 1: HEADER & CURATED OVERVIEW -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<span class="w-8 h-[1px] bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.28em] text-primary">Samsons Private Reserve &amp; Atelier</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            CURATED MENU
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mt-2 font-light">
+            Artisanal single-origin espresso, slow-steeped chilled extractions, and velvety crafted smoothies poured to perfection.
+          </p>
+</div>
+<!-- RIGHT STATS BADGE & CART QUICK SUMMARY -->
+<div class="flex items-center gap-4 self-start md:self-auto">
+<div class="flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-low shadow-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">BARISTA AT WORK</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Wait Time: ~6 mins</span>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-3 px-4 py-2.5 rounded-xl bg-surface-container-high shadow-md">
+<span class="material-symbols-outlined text-primary text-[20px]">shopping_bag</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Tasting Cart</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold" id="headerCartQuick">2 Items • ₹200</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: CATEGORY NAV PILLS & REFINED SEARCH -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8">
+<!-- Filter Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-none" id="categoryTabs">
+<button class="category-btn active px-6 py-2.5 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-primary-container text-on-primary font-bold shadow-md cursor-pointer" data-cat="all">
+            ALL (10)
+          </button>
+<button class="category-btn px-6 py-2.5 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-container-high cursor-pointer" data-cat="hot">
+            HOT (6)
+          </button>
+<button class="category-btn px-6 py-2.5 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-container-high cursor-pointer" data-cat="cold">
+            COLD (2)
+          </button>
+<button class="category-btn px-6 py-2.5 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-container-high cursor-pointer" data-cat="smoothies">
+            SMOOTHIES (2)
+          </button>
+</div>
+<!-- Search & Tonal Filter Input -->
+<div class="relative w-full lg:w-80">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px] pointer-events-none">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors shadow-inner" id="searchInput" placeholder="Search coffee or beverages..." type="text"/>
+</div>
+</div>
+<!-- SECTION 3: 4-COLUMN BESPOKE PRODUCT GRID -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7 pb-28" id="productGrid">
+<!-- 01: COF-001 Espresso -->
+<div class="product-card group flex flex-col justify-between rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 p-4" data-cat="hot" data-id="COF-001" data-name="Espresso" data-price="60">
+<div>
+<!-- Image with Vignette Scrim -->
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container-highest mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro studio shot of an authentic single shot espresso with dense hazelnut crema in a heavy black ceramic tasting cup, placed on charred rustic dark oak table, soft chiaroscuro lighting, dark cafe ambiance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPFWBfg9daG_jYfK__kYAsEBbAQCAiKxNxGl9MNtzbecqI17WUKstvXrqnSySIuLFdL13Auhkxxnt8r0F8Um2WvWhl_FZPQ8F-f-7PACXPJyPvTdUtdVJ9rrPi-qhwI4aA7XP4cRG3iu-dwUypGTdmrp03EjJK7bC-8OFa2sLGBT9Lcdtl_zR-nvKJTgphr8Guq_DgxJtokRcZ-LqldFqLoPPXylFFdIt9DS3nQ62hBHPqJ9ylyEpz"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/90 via-transparent to-transparent"></div>
+<!-- Badges -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">HOT</span>
+</div>
+<div class="absolute bottom-2.5 left-3">
+<span class="font-label-sm text-label-sm tracking-wider text-outline-variant uppercase">COF-001</span>
+</div>
+</div>
+<!-- Details -->
+<div class="px-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-medium">Espresso</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">₹60</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light line-clamp-2">
+                Double ristretto pull of Arabica Bourbon. Intense molasses and dark cocoa finish.
+              </p>
+</div>
+</div>
+<!-- Bottom Footer Bar -->
+<div class="mt-5 pt-3.5 px-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">35 LEFT</span>
+</div>
+<button aria-label="Add Espresso to tasting order" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container text-primary hover:text-on-primary-container flex items-center justify-center transition-all duration-200 shadow-sm active:scale-95 cursor-pointer" onclick="addToCart('COF-001', 'Espresso', 60)">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+</button>
+</div>
+</div>
+<!-- 02: COF-002 Cappuccino (Featured with DATA:IMAGE:IMAGE_3) -->
+<div class="product-card group flex flex-col justify-between rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 p-4" data-cat="hot" data-id="COF-002" data-name="Cappuccino" data-price="90">
+<div>
+<!-- Image with provided placeholder token -->
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container-highest mb-4">
+<img alt="Cappuccino with delicate latte art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJHxYKxa6wFmrnmr8JT1y_gUFJNb1bebxMcYtzcGsGQAWpA0qAWdo782BWaJaAF5IrrVBuoR2-09ip6MN1iNWqbQ9a-MLhG-BUxAkqHFS6bhloWlw1gboT_MXAC6dus1oakr7wQ9b5rnYR5WQ3pbKtzELH-b_UxXTsW--FRSEWosSpnsoq-hbkCdoKIfI1mSTiu7M7dj4mV-eglyxow1NW7qFECleiYl6vNCj_QWz7XbffOOb5uv8R"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/90 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">HOT</span>
+<span class="px-2 py-0.5 rounded-md bg-primary-container/20 text-primary font-label-sm text-label-sm uppercase tracking-wide">Signature</span>
+</div>
+<div class="absolute bottom-2.5 left-3">
+<span class="font-label-sm text-label-sm tracking-wider text-outline-variant uppercase">COF-002</span>
+</div>
+</div>
+<div class="px-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-medium">Cappuccino</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">₹90</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light line-clamp-2">
+                Equal parts espresso, silky steamed whole milk, and microfoam crowned with cocoa dust.
+              </p>
+</div>
+</div>
+<div class="mt-5 pt-3.5 px-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">24 LEFT</span>
+</div>
+<button aria-label="Add Cappuccino to tasting order" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container text-primary hover:text-on-primary-container flex items-center justify-center transition-all duration-200 shadow-sm active:scale-95 cursor-pointer" onclick="addToCart('COF-002', 'Cappuccino', 90)">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+</button>
+</div>
+</div>
+<!-- 03: COF-003 Café Latte (Low Stock Alert) -->
+<div class="product-card group flex flex-col justify-between rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 p-4" data-cat="hot" data-id="COF-003" data-name="Café Latte" data-price="110">
+<div>
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container-highest mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A transparent layered glass mug of artisanal cafe latte with distinct creamy layers and rosette foam on dark textured slate stone table with golden candlelit bokeh, fine dining coffee shop aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe_Rff_auU2PJB4ClUUkeLs790cwQy4fdeZWTpbsSaxBN4rBFfsSMrDlg1VQLOVeiJxOOfOTD5utPnvaOXeMQVpQfDJGfkmbPMmqp1_qmxPs0gXeBsfHCFhJk4LCwASNXo2ZhGy3mrSg4rrzKXmgj0KAtGklBcOP_mso1NFN2IwEWe081Pah6K0-06VBSjoLLlz3ZQ-VHqQ5sfv4-puXDeqj2qiC6iHpArkbZtd0ahb3TxlUp19rl2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/90 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">HOT</span>
+</div>
+<div class="absolute bottom-2.5 left-3">
+<span class="font-label-sm text-label-sm tracking-wider text-outline-variant uppercase">COF-003</span>
+</div>
+</div>
+<div class="px-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-medium">Café Latte</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">₹110</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light line-clamp-2">
+                Smooth steamed oat or jersey cow milk infused with two blonde espresso shots.
+              </p>
+</div>
+</div>
+<div class="mt-5 pt-3.5 px-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">LOW STOCK • 4 LEFT</span>
+</div>
+<button aria-label="Add Café Latte to tasting order" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container text-primary hover:text-on-primary-container flex items-center justify-center transition-all duration-200 shadow-sm active:scale-95 cursor-pointer" onclick="addToCart('COF-003', 'Café Latte', 110)">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+</button>
+</div>
+</div>
+<!-- 04: COF-004 Flat White -->
+<div class="product-card group flex flex-col justify-between rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 p-4" data-cat="hot" data-id="COF-004" data-name="Flat White" data-price="120">
+<div>
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container-highest mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An artisanal flat white served in an earthy dark matte stoneware ceramic cup, perfectly tight microfoam with swan latte art, dark roasted coffee roastery counter background, warm rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSmnSjvJmvqe1v472ohQ55ZPlfH7U9ma2pClYCUEM26IbKCIiV5GAB7_Yz3wd_YvIOwik52RI4EBmN4qetZLSMH6hoFyGkWYubjj0VDeduXPDjMegtmGLjCm5KwkjQUi7Yad4FJHjssw7m7xlTnafZUgQgCq0ci0qgEJQXWQoh0D2Dv5mSmLVnTNjrvG8hZsIUda-7TlmhqPWfqjSkYUTqHSaIMyB3QJHs_k44qGrqNs6dJ3_GN82r"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/90 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">HOT</span>
+</div>
+<div class="absolute bottom-2.5 left-3">
+<span class="font-label-sm text-label-sm tracking-wider text-outline-variant uppercase">COF-004</span>
+</div>
+</div>
+<div class="px-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-medium">Flat White</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">₹120</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light line-clamp-2">
+                Velvety micro-foamed milk poured through a potent ristretto extract. Pure, rich intensity.
+              </p>
+</div>
+</div>
+<div class="mt-5 pt-3.5 px-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">AVAILABLE</span>
+</div>
+<button aria-label="Add Flat White to tasting order" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container text-primary hover:text-on-primary-container flex items-center justify-center transition-all duration-200 shadow-sm active:scale-95 cursor-pointer" onclick="addToCart('COF-004', 'Flat White', 120)">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+</button>
+</div>
+</div>
+<!-- 05: COF-005 Café Mocha -->
+<div class="product-card group flex flex-col justify-between rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 p-4" data-cat="hot" data-id="COF-005" data-name="Café Mocha" data-price="120">
+<div>
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container-highest mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Rich decadent cafe mocha topped with dark Venezuelan chocolate shavings, served in a ribbed dark amber glass mug on a dark brass tray in a luxurious dim-lit salon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIVFL2dq4h69gXhp4w35ABpE5vyJxNUUFuKgqWxY6doeQhZvFk7S9vVeRxceSw7qhVynh97qlVwgRh_bBzNEUoQlxP64MfIjsyhgHp5WJyXGTXOxNdHvwPkfFgBxxUIb8w8c5hpixIRWS4bU6cwzT4PTjCebosjtpNTX-lM9StrnRQ_5bKrmX9Y8Tv67PIh2PFLXxZyTNG8x_HkiRz75qKO4186X98BlxxP_TEp6So-1nnM9t3yCUS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/90 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">HOT</span>
+</div>
+<div class="absolute bottom-2.5 left-3">
+<span class="font-label-sm text-label-sm tracking-wider text-outline-variant uppercase">COF-005</span>
+</div>
+</div>
+<div class="px-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-medium">Café Mocha</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">₹120</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light line-clamp-2">
+                Single-origin single espresso blended with melted 70% dark Belgian cocoa ganache.
+              </p>
+</div>
+</div>
+<div class="mt-5 pt-3.5 px-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">AVAILABLE</span>
+</div>
+<button aria-label="Add Café Mocha to tasting order" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container text-primary hover:text-on-primary-container flex items-center justify-center transition-all duration-200 shadow-sm active:scale-95 cursor-pointer" onclick="addToCart('COF-005', 'Café Mocha', 120)">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+</button>
+</div>
+</div>
+<!-- 06: COF-006 Caramel Macchiato -->
+<div class="product-card group flex flex-col justify-between rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 p-4" data-cat="hot" data-id="COF-006" data-name="Caramel Macchiato" data-price="130">
+<div>
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container-highest mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Artisanal caramel macchiato in a clear fluted glass tumbler, visible layers of vanilla milk, dark espresso mark, and drizzled golden salted caramel, cozy dark wood cafe background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0xBTm0L2rVwa2LsNTTJtqnx86lDqOYHjyWbCCsOkL9LZwZJp45cbfh9fDuhi-vcKlcjgLiVLGaP6YeXZgwFlAM_X-CssSoM3sFnkXMoXh8vbAVzcklaZOvbeDsEkhURsgq4huN0ZUor5hU_z67Pef_1QBcHvrhxTUHA1_nLPaMN43SuKUpogxCUR3zVgUM8oP8nmALbLe1A4eO1l7TwggkAdiUm7ei3VnPuOy2eF6Or9RJ2HODmoX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/90 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">HOT</span>
+</div>
+<div class="absolute bottom-2.5 left-3">
+<span class="font-label-sm text-label-sm tracking-wider text-outline-variant uppercase">COF-006</span>
+</div>
+</div>
+<div class="px-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-medium">Caramel Macchiato</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">₹130</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light line-clamp-2">
+                Freshly steamed vanilla-scented milk marked with espresso and artisanal salted caramel glaze.
+              </p>
+</div>
+</div>
+<div class="mt-5 pt-3.5 px-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">12 LEFT</span>
+</div>
+<button aria-label="Add Caramel Macchiato to tasting order" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container text-primary hover:text-on-primary-container flex items-center justify-center transition-all duration-200 shadow-sm active:scale-95 cursor-pointer" onclick="addToCart('COF-006', 'Caramel Macchiato', 130)">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+</button>
+</div>
+</div>
+<!-- 07: COF-007 Iced Shaken Espresso -->
+<div class="product-card group flex flex-col justify-between rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 p-4" data-cat="cold" data-id="COF-007" data-name="Iced Shaken Espresso" data-price="120">
+<div>
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container-highest mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Tall crystal glass of iced shaken espresso with clear ice cubes, glistening condensation drops, golden brown coffee froth on top, dark walnut bar surface with soft golden backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7NKmuVM2OfBIgnQqbCoR-KhPQQVxyAfmykAvLX5hXxx7yi-8qEQ05UJp0UCxYRfiDWTAqv-_KYXxvwbIN-qvkLhC2A3f-mtJySJt36t9N1-VSb9iGAdTVMU05dVPo5zhxkVGQZWVLOIhM9g3CrNFFZUuWJu347Pf4-d9B2XHi9Fo7bRjRfNLgbkUmcCvOqDOyKgqkxHMyYm___IFa8pF92s0UWOmRNNpRZsuGWoK-tv_mQSsBgDK_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/90 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold">COLD</span>
+</div>
+<div class="absolute bottom-2.5 left-3">
+<span class="font-label-sm text-label-sm tracking-wider text-outline-variant uppercase">COF-007</span>
+</div>
+</div>
+<div class="px-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-medium">Iced Shaken Espresso</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">₹120</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light line-clamp-2">
+                Vigorously hand-shaken with artisanal brown sugar syrup and ice, topped with a splash of cream.
+              </p>
+</div>
+</div>
+<div class="mt-5 pt-3.5 px-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">AVAILABLE</span>
+</div>
+<button aria-label="Add Iced Shaken Espresso to tasting order" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container text-primary hover:text-on-primary-container flex items-center justify-center transition-all duration-200 shadow-sm active:scale-95 cursor-pointer" onclick="addToCart('COF-007', 'Iced Shaken Espresso', 120)">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+</button>
+</div>
+</div>
+<!-- 08: COF-008 Cold Brew -->
+<div class="product-card group flex flex-col justify-between rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 p-4" data-cat="cold" data-id="COF-008" data-name="Cold Brew" data-price="110">
+<div>
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container-highest mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Amber glass carafe and tumbler of slow steeped cold brew coffee served over an oversized crystal ice sphere, dark moody vintage speakeasy background with warm tungsten lamps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD59XvSE2vHO_AZVqcVqAWhteViYr7OirEvYY0bOw42qUNlCQTnxPYU719kbyGm6UuyJT0kqqi5SjvAkxjEA2GAiIoUdgzQVLwzQqVTAuoMxfiPof1-0os3d5GhvlTpjNXD0kHu7BEyuL8olHE7kSMZx7nZSpKQD-vHjjn3fyRMtd-f3rjO1b-SWSAi9dxfDMQuzV6e4ceMFeXl_JruuQcMcDbt2tFo8ssoHV3bpjTDeJ8iFVVeAThs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/90 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold">COLD</span>
+</div>
+<div class="absolute bottom-2.5 left-3">
+<span class="font-label-sm text-label-sm tracking-wider text-outline-variant uppercase">COF-008</span>
+</div>
+</div>
+<div class="px-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-medium">Cold Brew</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">₹110</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light line-clamp-2">
+                Steeped for 18 hours in filtered spring water. Naturally sweet, low-acidity profile with peach notes.
+              </p>
+</div>
+</div>
+<div class="mt-5 pt-3.5 px-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">18 LEFT</span>
+</div>
+<button aria-label="Add Cold Brew to tasting order" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container text-primary hover:text-on-primary-container flex items-center justify-center transition-all duration-200 shadow-sm active:scale-95 cursor-pointer" onclick="addToCart('COF-008', 'Cold Brew', 110)">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+</button>
+</div>
+</div>
+<!-- 09: SMO-001 Banana Smoothies -->
+<div class="product-card group flex flex-col justify-between rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 p-4" data-cat="smoothies" data-id="SMO-001" data-name="Banana Smoothies" data-price="150">
+<div>
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container-highest mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious thick banana almond smoothie in a frosted tall glass garnished with caramelized banana slice and chia seeds, rich dark studio food photography with warm golden rim light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaXJmPddZhBBCMWPTlW59v2DcQVAlFfhHgsZt0_a7Yir5QrsYSWjS_BIilol5YAWMnIIxED_ysQawdaQKx4deoCzRjPvCqxo1hMQS5B0IvpSHD17WTdJwKZhWpFVSJHAtSbytC29iyx81Y7eDtGgcARNciGjixsnjMuJWMbLxqX3AtFb6BAc2yoiZGVetRuTEVdE4aeXIqYunEaRUYfs9o900wQpd2K88qm7eB2kzvN6Q4FNwHPgvZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/90 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">SMOOTHIES</span>
+</div>
+<div class="absolute bottom-2.5 left-3">
+<span class="font-label-sm text-label-sm tracking-wider text-outline-variant uppercase">SMO-001</span>
+</div>
+</div>
+<div class="px-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-medium">Banana Smoothies</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">₹150</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light line-clamp-2">
+                Ripe Cavendish bananas blended with Greek yogurt, wild clover honey, and toasted almond essence.
+              </p>
+</div>
+</div>
+<div class="mt-5 pt-3.5 px-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">8 LEFT</span>
+</div>
+<button aria-label="Add Banana Smoothies to tasting order" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container text-primary hover:text-on-primary-container flex items-center justify-center transition-all duration-200 shadow-sm active:scale-95 cursor-pointer" onclick="addToCart('SMO-001', 'Banana Smoothies', 150)">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+</button>
+</div>
+</div>
+<!-- 10: SMO-002 Kiwi Smoothies (Out of stock state) -->
+<div class="product-card opacity-65 flex flex-col justify-between rounded-2xl bg-surface-container-low p-4 shadow-sm" data-cat="smoothies" data-id="SMO-002" data-name="Kiwi Smoothies" data-price="180">
+<div>
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container-highest mb-4">
+<img class="w-full h-full object-cover grayscale contrast-75" data-alt="Vibrant fresh emerald kiwi smoothie glass with golden backlight, fresh sliced kiwi fruit accents on dark slate table, elegant fine dining cafe presentation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKhP7oflDy_7nMbbdIrLof2dU0DrZXwPPG53y0JITx9P4aeiz3v0_XgBreX7Z6Vo0rkxhUwXT5onfrz4SGq0ZEWts5CetUwSLc5zgh6nDNiH0PaHH0tQ5hH0iz0y3r_nvMhzrP1B_gqF0seNkRCt613RrIzqmKVa3-efNAZBSJIaSn9MNNbCICTHtHa07Opz31ayK14AwvvSdEyGsN1lReVbnkqiMFqv2wvfpNmo5mihHgbUgM_CZ8"/>
+<div class="absolute inset-0 bg-surface-container-lowest/60"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest/80 text-outline font-label-sm text-label-sm uppercase tracking-wider font-semibold">SMOOTHIES</span>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="px-3.5 py-1.5 rounded-full bg-surface-container-highest/90 text-on-surface font-label-sm text-label-sm uppercase tracking-widest font-bold border-none shadow-md">OUT OF STOCK</span>
+</div>
+<div class="absolute bottom-2.5 left-3">
+<span class="font-label-sm text-label-sm tracking-wider text-outline-variant uppercase">SMO-002</span>
+</div>
+</div>
+<div class="px-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant font-medium">Kiwi Smoothies</h3>
+<span class="font-headline-sm text-headline-sm text-outline font-semibold">₹180</span>
+</div>
+<p class="font-body-md text-body-md text-outline font-light line-clamp-2">
+                New Zealand organic golden kiwis churned with fresh mint, crushed ice, and lime zest cordial.
+              </p>
+</div>
+</div>
+<div class="mt-5 pt-3.5 px-1 flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">RESTOCKING SOON</span>
+<button aria-label="Kiwi Smoothies Out of Stock" class="w-10 h-10 rounded-full bg-surface-container-highest text-outline flex items-center justify-center cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[20px]">block</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 4: REFINED FLOATING TASTING ORDER SUMMARY FOLIO -->
+<aside class="fixed bottom-6 right-6 lg:bottom-8 lg:right-12 z-40 max-w-sm w-full bg-surface-container-high/95 backdrop-blur-xl rounded-2xl shadow-2xl p-4 transition-all duration-300" id="floatingCartDrawer">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">room_service</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block leading-tight">Order Folio</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="floatingCartCount">2 Items • ₹200</span>
+</div>
+</div>
+<button aria-label="Toggle Cart Breakdown" class="text-on-surface-variant hover:text-primary transition-colors p-1" onclick="toggleCartDrawerDetails()">
+<span class="material-symbols-outlined text-[24px]" id="drawerCaret">expand_less</span>
+</button>
+</div>
+<!-- Collapsible Cart Preview Items -->
+<div class="hidden flex-col gap-2.5 py-3" id="cartItemsList">
+<div class="flex items-center justify-between font-body-md text-body-md text-on-surface-variant">
+<span>1x Cappuccino (COF-002)</span>
+<span class="text-on-surface font-medium">₹90</span>
+</div>
+<div class="flex items-center justify-between font-body-md text-body-md text-on-surface-variant">
+<span>1x Cold Brew (COF-008)</span>
+<span class="text-on-surface font-medium">₹110</span>
+</div>
+<div class="flex items-center justify-between text-xs text-outline pt-1">
+<span>Taxes &amp; Roastery Service Included</span>
+<span class="text-primary font-bold">₹200 TOTAL</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-3 pt-3">
+<a class="flex-1 py-2.5 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md uppercase tracking-wider text-center font-semibold" data-path="my-order" href="#">
+        VIEW ORDER
+      </a>
+<a class="flex-1 py-2.5 rounded-xl bg-primary hover:bg-primary-fixed text-on-primary font-label-md text-label-md uppercase tracking-wider text-center font-bold shadow-md hover:shadow-lg transition-all" data-path="payments" href="#">
+        PLACE ORDER
+      </a>
+</div>
+</aside>
+<!-- Interactive Logic for Menu Filter & Dynamic Live Cart Addition -->
+<script>
+    // State Tracking
+    const cartState = {
+      items: [
+        { id: 'COF-002', name: 'Cappuccino', price: 90, qty: 1 },
+        { id: 'COF-008', name: 'Cold Brew', price: 110, qty: 1 }
+      ],
+      get totalCount() {
+        return this.items.reduce((sum, item) => sum + item.qty, 0);
+      },
+      get totalPrice() {
+        return this.items.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      }
+    };
+
+    function updateCartUI() {
+      const summaryText = `${cartState.totalCount} Items • ₹${cartState.totalPrice}`;
+      const headerCart = document.getElementById('headerCartQuick');
+      const floatingText = document.getElementById('floatingCartCount');
+      if (headerCart) headerCart.innerText = summaryText;
+      if (floatingText) floatingText.innerText = summaryText;
+
+      // Update collapsible list
+      const listContainer = document.getElementById('cartItemsList');
+      if (listContainer) {
+        let html = '';
+        cartState.items.forEach(it => {
+          html += `
+            <div class="flex items-center justify-between font-body-md text-body-md text-on-surface-variant">
+              <span>${it.qty}x ${it.name} (${it.id})</span>
+              <span class="text-on-surface font-medium">₹${it.price * it.qty}</span>
+            </div>
+          `;
+        });
+        html += `
+          <div class="flex items-center justify-between text-xs text-outline pt-1">
+            <span>Taxes &amp; Roastery Service Included</span>
+            <span class="text-primary font-bold">₹${cartState.totalPrice} TOTAL</span>
+          </div>
+        `;
+        listContainer.innerHTML = html;
+      }
+
+      // Flash toast aura on floating cart
+      const drawer = document.getElementById('floatingCartDrawer');
+      if (drawer) {
+        drawer.classList.add('ring-2', 'ring-primary');
+        setTimeout(() => drawer.classList.remove('ring-2', 'ring-primary'), 450);
+      }
+    }
+
+    function addToCart(id, name, price) {
+      const existing = cartState.items.find(i => i.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cartState.items.push({ id, name, price, qty: 1 });
+      }
+      updateCartUI();
+    }
+
+    function toggleCartDrawerDetails() {
+      const list = document.getElementById('cartItemsList');
+      const caret = document.getElementById('drawerCaret');
+      if (list) {
+        const isHidden = list.classList.contains('hidden');
+        if (isHidden) {
+          list.classList.remove('hidden');
+          list.classList.add('flex');
+          if (caret) caret.innerText = 'expand_more';
+        } else {
+          list.classList.add('hidden');
+          list.classList.remove('flex');
+          if (caret) caret.innerText = 'expand_less';
+        }
+      }
+    }
+
+    // Category Tabs Filter Logic
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        // UI tab switch
+        document.querySelectorAll('.category-btn').forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-md');
+          b.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        this.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        this.classList.add('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-md');
+
+        const cat = this.getAttribute('data-cat');
+        filterGrid(cat, document.getElementById('searchInput')?.value || '');
+      });
+    });
+
+    // Search Input Logic
+    const searchEl = document.getElementById('searchInput');
+    if (searchEl) {
+      searchEl.addEventListener('input', function(e) {
+        const currentActiveBtn = document.querySelector('.category-btn.bg-primary-container');
+        const activeCat = currentActiveBtn ? currentActiveBtn.getAttribute('data-cat') : 'all';
+        filterGrid(activeCat, e.target.value);
+      });
+    }
+
+    function filterGrid(category, query) {
+      const q = query.toLowerCase().trim();
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-cat');
+        const cardName = card.getAttribute('data-name')?.toLowerCase() || '';
+        const matchCat = (category === 'all' || cardCat === category);
+        const matchQuery = (q === '' || cardName.includes(q));
+
+        if (matchCat && matchQuery) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</div></main><footer class="w-full bg-[#110D0B] border-t border-primary-container/15 text-on-surface-variant"><div class="max-w-[1440px] mx-auto px-8 lg:px-12 py-16"><div class="grid grid-cols-1 md:grid-cols-4 gap-10"><div class="md:col-span-1"><div class="font-headline-sm text-headline-sm text-on-surface tracking-wide mb-1">SAMSONS CAFE</div><p class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-4">CAFE &amp; ROASTERY</p><p class="font-body-md text-body-md text-on-surface-variant mb-6">Crafted single-origin profiles, small-batch roastings, and fine culinary pairings designed for intimate moments.</p><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low border border-primary-container/20"><span class="material-symbols-outlined text-primary text-[16px]">verified_user</span><span class="font-label-sm text-label-sm text-primary tracking-wider uppercase">ROOTS PAY • 256-BIT SECURE</span></div></div><div class="flex flex-col gap-2.5"><h4 class="font-title-md text-title-md text-on-surface mb-2 font-semibold tracking-wider uppercase">EXPLORE</h4><a class="font-body-md text-body-md hover:text-primary transition-colors" data-path="home" href="#">Artisanal Roastery</a><a class="font-body-md text-body-md hover:text-primary transition-colors" data-path="menu" href="#">Culinary Atelier</a><a class="font-body-md text-body-md hover:text-primary transition-colors" data-path="my-order" href="#">Private Reserve Tasting</a><a class="font-body-md text-body-md hover:text-primary transition-colors" data-path="payments" href="#">Gift Connoisseur Folio</a></div><div class="flex flex-col gap-2.5"><h4 class="font-title-md text-title-md text-on-surface mb-2 font-semibold tracking-wider uppercase">SALON &amp; ATELIER</h4><p class="font-body-md text-body-md">14 Rue de l'Ambre, Quarter des Arts</p><p class="font-body-md text-body-md text-primary mt-2">HOURS</p><p class="font-body-md text-body-md">Mon – Sun: 08:00 AM – 11:00 PM</p><p class="font-body-md text-body-md">Acoustic Evening Sessions from 07:00 PM</p></div><div class="flex flex-col gap-2.5"><h4 class="font-title-md text-title-md text-on-surface mb-2 font-semibold tracking-wider uppercase">ASSISTANCE</h4><a class="font-body-md text-body-md hover:text-primary transition-colors" data-path="payments" href="#">Roots Pay Verification</a><a class="font-body-md text-body-md hover:text-primary transition-colors" data-path="my-order" href="#">Order Tracking &amp; Delivery</a><a class="font-body-md text-body-md hover:text-primary transition-colors" data-path="home" href="#">Bespoke Roasting Inquiry</a><a class="font-body-md text-body-md hover:text-primary transition-colors" data-path="home" href="#">Privacy &amp; Tasting Etiquette</a></div></div><div class="mt-12 pt-8 border-t border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-4 font-body-md text-body-md"><p class="text-xs text-on-surface-variant">© 2024 Samsons Cafe &amp; Roastery. All rights reserved.</p><p class="font-label-sm text-label-sm uppercase tracking-widest text-primary/70">EXCELLENCE IN EVERY POUR</p></div></div></footer></body></html>

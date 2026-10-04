@@ -1,0 +1,2 @@
+import type { ReactNode } from "react";
+export function AdminTable({ headers, children }: { headers: string[]; children: ReactNode }) { return <div className="overflow-x-auto rounded-xl border border-[#3d312a]"><table className="w-full min-w-[620px] text-left text-sm"><thead className="bg-[#1c1512] text-[10px] tracking-widest text-[#c8a261]"><tr>{headers.map((header) => <th key={header} className="px-5 py-4 font-bold">{header}</th>)}</tr></thead><tbody className="divide-y divide-[#3d312a] text-[#d1c5b4]">{children}</tbody></table></div>; }

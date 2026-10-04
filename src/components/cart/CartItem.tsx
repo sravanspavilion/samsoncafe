@@ -1,0 +1,7 @@
+"use client";
+import Image from "next/image";
+import { Trash2 } from "lucide-react";
+import type { CartLine } from "@/types";
+import { formatINR } from "@/lib/utils";
+import { QuantitySelector } from "@/components/menu/QuantitySelector";
+export function CartItem({ item, onQuantity, onRemove }: { item: CartLine; onQuantity: (quantity: number) => void; onRemove: () => void }) { return <article className="panel grid grid-cols-[92px_1fr] gap-4 rounded-xl p-3 sm:grid-cols-[120px_1fr_auto] sm:p-4"><div className="relative aspect-square overflow-hidden rounded-lg"><Image src={item.image} alt={item.name} fill className="object-cover" /></div><div><p className="text-[10px] font-bold tracking-widest text-[#c8a261]">{item.category.toUpperCase()} · {item.id}</p><h2 className="serif mt-1 text-xl">{item.name}</h2><p className="mt-1 text-sm text-muted">{formatINR(item.price)} each</p><div className="mt-4"><QuantitySelector value={item.quantity} onChange={onQuantity} max={item.stock} /></div></div><div className="col-span-2 flex items-end justify-between border-t border-[#3d312a] pt-3 sm:col-span-1 sm:flex-col sm:items-end sm:border-0 sm:pt-0"><button onClick={onRemove} aria-label={`Remove ${item.name}`} className="text-[#a8988b] hover:text-[#e5c158]"><Trash2 size={18} /></button><strong className="serif text-xl text-[#e9c07c]">{formatINR(item.price * item.quantity)}</strong></div></article>; }

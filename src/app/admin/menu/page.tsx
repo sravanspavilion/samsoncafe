@@ -1,0 +1,5 @@
+import Image from "next/image";
+import { fallbackMenu } from "@/lib/google-apps-script";
+import { formatINR } from "@/lib/utils";
+import { AdminTable } from "@/components/admin/AdminTable";
+export default function MenuAdminPage() { return <><span className="text-[10px] font-bold tracking-[.22em] text-[#c8a261]">CATALOGUE</span><h1 className="serif mt-3 text-4xl">Menu</h1><div className="mt-8"><AdminTable headers={["ITEM", "IMAGE", "CATEGORY", "PRICE", "AVAILABILITY"]}>{fallbackMenu.map((item) => <tr key={item.id}><td className="px-5 py-4"><p className="font-medium text-[#faf6f0]">{item.name}</p><p className="mt-1 text-xs text-muted">{item.id}</p></td><td className="px-5 py-3"><Image src={item.image} alt="" width={46} height={46} className="size-11 rounded-md object-cover" /></td><td className="px-5 py-4">{item.category}</td><td className="px-5 py-4">{formatINR(item.price)}</td><td className="px-5 py-4"><span className={item.status === "available" ? "text-[#e9c07c]" : "text-muted"}>{item.status === "available" ? "Available" : "Unavailable"}</span></td></tr>)}</AdminTable></div></>; }
