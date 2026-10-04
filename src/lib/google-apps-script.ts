@@ -11,9 +11,27 @@ export const fallbackMenu: MenuItem[] = [
   { id: "PAS-002", name: "Dark Chocolate Tart", price: 180, image: "/images/menu/espresso.png", stock: 3, status: "available", category: "Pastries", description: "A rich valrhona ganache tart with a crisp cacao shell." }
 ];
 
-function toMenuItem(row: Record<string, unknown>): MenuItem {
+function toMenuItem(row: Record<string, unknown>, index: number): MenuItem {
   const stock = Number(row.STOCK ?? row.stock ?? 0);
-  return { id: String(row["ITEM ID"] ?? row.id), name: String(row["ITEM NAME"] ?? row.name), price: Number(row.PRICE ?? row.price), image: String(row.IMAGE ?? row.image ?? "/images/menu/espresso.png"), stock, status: String(row.STATUS ?? row.status ?? "available").toLowerCase() === "available" && stock > 0 ? "available" : "unavailable", category: String(row.CATEGORY ?? row.category ?? "Other"), description: String(row.DESCRIPTION ?? row.description ?? "A carefully prepared Samsons Cafe selection.") };
+  const rawId = row["ITEM ID"] ?? row.id ?? row.ID;
+  const id = rawId ? String(rawId).trim() : `ITEM-${index + 1}`;
+  const name = String(row["ITEM NAME"] ?? row.name ?? row.NAME ?? "").trim() || `Menu Item ${index + 1}`;
+  const price = Number(row.PRICE ?? row.price ?? 0);
+  let image: unknown = row.IMAGE ?? row.image ?? row.Image ?? row.IMAGE_URL ?? row.imageUrl;
+  let imageStr = "";
+  if (typeof image === "string") {
+    imageStr = image.trim();
+  } else if (image != null) {
+    imageStr = String(image).trim();
+  }
+  if (!imageStr || imageStr === "null" || imageStr === "undefined") {
+    imageStr = "/images/menu/espresso.png";
+  }
+  const category = String(row.CATEGORY ?? row.category ?? "Other").trim() || "Other";
+  const description = String(row.DESCRIPTION ?? row.description ?? "A carefully prepared Samsons Cafe selection.").trim();
+  const statusRaw = String(row.STATUS ?? row.status ?? "available").toLowerCase();
+  const status = statusRaw === "available" && stock > 0 ? "available" : "unavailable";
+  return { id, name, price, image: imageStr, stock, status, category, description };
 }
 export async function fetchMenuFromAppsScript(): Promise<MenuItem[]> {
   const url = process.env.GOOGLE_APPS_SCRIPT_URL;
@@ -24,7 +42,10 @@ export async function fetchMenuFromAppsScript(): Promise<MenuItem[]> {
   const json = await response.json();
   const rows = Array.isArray(json) ? json : json.items ?? json.data;
   if (!Array.isArray(rows)) throw new Error("Unexpected Apps Script menu response");
-  return rows.map(toMenuItem);
+  return rows
+    .filter((row) => row && typeof row === "object")
+    .map((row, index) => toMenuItem(row as Record<string, unknown>, index))
+    .filter((item) => Boolean(item.id) && item.id !== "undefined" && item.id !== "null");
 }
 export async function submitOrderToAppsScript(order: OrderPayload, orderId: string): Promise<void> {
   const url = process.env.GOOGLE_APPS_SCRIPT_URL;
