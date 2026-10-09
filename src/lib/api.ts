@@ -1,7 +1,7 @@
 import type { MenuItem, OrderHistoryItem, OrderPayload } from "@/types";
 
 export async function getMenu(): Promise<MenuItem[]> {
-  const response = await fetch("/api/menu", { cache: "no-store" });
+  const response = await fetch("/api/menu", { cache: "no-store", signal: AbortSignal.timeout(20000) });
   if (!response.ok) throw new Error("The menu is unavailable right now.");
   return response.json();
 }

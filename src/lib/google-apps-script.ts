@@ -1,5 +1,6 @@
 import type { MenuItem, OrderPayload, OrderRecord } from "@/types";
 
+// Retained for the existing management inventory view, never used by the public menu API.
 export const fallbackMenu: MenuItem[] = [
   { id: "COF-001", name: "Espresso", price: 60, image: "https://res.cloudinary.com/imz1gwe6/image/upload/f_auto,q_auto/espresso", stock: 34, status: "available", category: "HOT", description: "" },
   { id: "COF-002", name: "Cappuccino", price: 90, image: "", stock: 33, status: "available", category: "HOT", description: "" },
@@ -15,9 +16,9 @@ export const fallbackMenu: MenuItem[] = [
 
 function toMenuItem(row: Record<string, unknown>, index: number): MenuItem {
   const stock = Number(row.STOCK ?? row.stock ?? 0);
-  const rawId = row["ITEM ID"] ?? row.id ?? row.ID;
+  const rawId = row["ITEM ID"] ?? row.itemId ?? row.id ?? row.ID;
   const id = rawId ? String(rawId).trim() : `ITEM-${index + 1}`;
-  const name = String(row["ITEM NAME"] ?? row.name ?? row.NAME ?? "").trim() || `Menu Item ${index + 1}`;
+  const name = String(row["ITEM NAME"] ?? row.itemName ?? row.name ?? row.NAME ?? "").trim() || `Menu Item ${index + 1}`;
   const price = Number(row.PRICE ?? row.price ?? 0);
   let image: unknown = row.IMAGE ?? row.image ?? row.Image ?? row.IMAGE_URL ?? row.imageUrl;
   let imageStr = "";
@@ -37,9 +38,11 @@ function toMenuItem(row: Record<string, unknown>, index: number): MenuItem {
 }
 export async function fetchMenuFromAppsScript(): Promise<MenuItem[]> {
   const url = process.env.GOOGLE_APPS_SCRIPT_URL;
-  if (!url) return fallbackMenu;
+  if (!url) throw new Error("Menu data source is not configured");
   // TODO: Adjust the `action=menu` query key if the supplied Apps Script uses another menu action.
-  const response = await fetch(`${url}?action=menu`, { cache: "no-store" });
+  const menuUrl = new URL(url);
+  menuUrl.searchParams.set("action", "menu");
+  const response = await fetch(menuUrl, { cache: "no-store", signal: AbortSignal.timeout(15000) });
   if (!response.ok) throw new Error("Apps Script menu request failed");
   const json = await response.json();
   const rows = Array.isArray(json) ? json : json.items ?? json.data;
@@ -52,7 +55,6 @@ export async function fetchMenuFromAppsScript(): Promise<MenuItem[]> {
       if (item.name.toLowerCase().startsWith("menu item")) return false;
       return true;
     });
-  if (result.length === 0) return fallbackMenu;
   return result;
 }
 export async function submitOrderToAppsScript(order: OrderPayload, orderId: string): Promise<void> {

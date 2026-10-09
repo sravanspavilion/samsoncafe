@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline":"#99907c","tertiary-fixed-dim":"#d2c4ba","error-container":"#93000a","secondary-fixed-dim":"#eac16d","surface-container":"#231f1c","on-surface":"#eae1dc","secondary":"#eac16d","tertiary-fixed":"#eee0d6","on-tertiary-fixed":"#211a14","on-secondary-fixed":"#261a00","primary-fixed":"#ffe088","secondary-fixed":"#ffdea0","on-secondary":"#402d00","on-error-container":"#ffdad6","on-error":"#690005","primary-container":"#d4af37","primary-fixed-dim":"#e9c349","inverse-on-surface":"#34302c","on-primary":"#3c2f00","surface":"#161310","inverse-surface":"#eae1dc","secondary-container":"#6d5001","on-primary-fixed":"#241a00","outline-variant":"#4d4635","on-tertiary-fixed-variant":"#4e453e","on-background":"#eae1dc","on-primary-container":"#554300","surface-container-high":"#2d2926","on-primary-fixed-variant":"#574500","error":"#ffb4ab","tertiary-container":"#beb1a7","surface-container-highest":"#393431","tertiary":"#daccc2","on-tertiary":"#372f28","on-secondary-fixed-variant":"#5c4300","on-surface-variant":"#d0c5af","surface-container-lowest":"#110e0b","surface-tint":"#e9c349","surface-dim":"#161310","on-tertiary-container":"#4d443c","surface-variant":"#393431","inverse-primary":"#735c00","on-secondary-container":"#edc46f","surface-bright":"#3d3835","surface-container-low":"#1f1b18","background":"#161310","primary":"#f2ca50"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"margin-desktop":"3rem","gutter":"1rem","space-md":"1rem","space-lg":"1.5rem","space-xl":"2.5rem","margin-tablet":"2rem","margin":"1rem","space-xs":"0.25rem","gutter-desktop":"1.5rem","space-sm":"0.5rem"},fontFamily:{"headline-sm":["Playfair Display"],"headline-md":["Playfair Display"],"price-lg":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"headline-xl":["Playfair Display"],"body-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-xl-mobile":["Playfair Display"],"headline-lg":["Playfair Display"]},fontSize:{"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"0em","fontWeight":"500"}],"price-lg":["22px",{"lineHeight":"26px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"0em","fontWeight":"600"}],"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"0.01em","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0.01em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"400"}],"headline-xl-mobile":["34px",{"lineHeight":"42px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-shrink-0"><img alt="Brand logo. - Primary color: #d4af37
+- Font: playfairDisplay
+- Mode: dark
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XeZgVahmRoEg4yUt0GO-cMwVDoUp1NpB5G05hFkMOPVvt8YcvF9DVQOQWYULhKEtqkoPRnsKjSxvLEysjMSJ52QxXwxWcynE4EnNCTBMFpsvI44_3s77I1giWbdkVbS2Tu-P8H_cD_zE6sRK6nnKpjrc9p9UjQs05FpWGn0qu5T45p_ZIhXgKCVWJrTvJaRB7TWW9FE1S3I40xpjSU-h46DUBKxnISBzfjPeElHP8uWggGE4fMBdsEwaQ"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-wide leading-none">SAMSONS CAFE</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant opacity-80 mt-space-xs">CAFE • FOOD &amp; ARTISANAL BREW</span></div></div><div class="hidden xl:flex items-center gap-space-sm px-space-md py-space-xs rounded-full bg-surface-container-low shadow-[inset_0_0_12px_rgba(212,175,55,0.06)]"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">BREW BAR ONLINE • Table 07 Connected</span></div><nav class="hidden lg:flex items-center gap-space-xs bg-surface-container-lowest p-space-xs rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg shadow-[0_0_16px_rgba(212,175,55,0.2)]"><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="overview-dashboard" href="#">Overview</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="live-orders" href="#">Live Orders</a><a aria-current="page" class="px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg shadow-[0_0_16px_rgba(212,175,55,0.2)]" data-path="simple-inventory" href="#">Inventory</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="payments" href="#">Payments</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="customer-menu" href="#">Menu</a></nav><div class="flex items-center gap-space-sm"><button aria-label="Search" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><button aria-label="Notifications" class="relative w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-primary"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 cursor-pointer shadow-[0_0_12px_rgba(212,175,55,0.25)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<div class="max-w-7xl w-full mx-auto px-margin md:px-margin-desktop py-space-lg flex flex-col gap-space-lg">
+<!-- Management Console Sub-Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-low p-space-lg rounded-xl shadow-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-container/20 text-primary">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-secondary">Back-of-House Console</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Stock &amp; Inventory Management</h1>
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span>Live Google Sheets Menu Sync</span>
+<span class="text-outline">•</span>
+<span class="text-on-surface-variant/80">Auto-sync every 2m</span>
+<span class="text-outline">•</span>
+<span class="font-label-sm text-label-sm uppercase text-secondary/90">Sheet: "MENU SHEET" (v4.1)</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md shadow-sm" id="exportCsvBtn">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">file_download</span>
+<span>Export CSV</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-high text-secondary hover:bg-surface-container-highest transition-colors font-label-md text-label-md shadow-sm" id="resyncBtn">
+<span class="material-symbols-outlined text-[18px] transition-transform" id="syncIcon">sync</span>
+<span>Force Resync Now</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-gradient-to-r from-primary to-primary-container text-on-primary font-label-lg text-label-lg shadow-md hover:brightness-105 active:scale-[0.98] transition-all" id="addNewItemBtn">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Add New Item</span>
+</button>
+</div>
+</div>
+<!-- Visual Storytelling Ribbon: Roastery & Bar Ambiance -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<div class="lg:col-span-2 relative h-36 rounded-xl overflow-hidden shadow-md bg-surface-container-lowest">
+<div class="bg-cover bg-center w-full h-full opacity-35" data-alt="Close up dark moody shot of a master espresso machine steam wand and golden roasted specialty coffee beans scattered over dark scorched oak counter at Samsons Cafe bar with warm ambient lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaD5nPE-6hECwOZBlxWj_VyXeVBKqjO1MYIDRCr-vU2M72OiBhSfdUeE-JJdazXd4PzTrEdMnpn3yzm3p9pOh-D6YmwoVwELpa5AmoPqQKwy65oc3U7Ps-CjTFuIVUytoiU62uK7xY6YNx_nFk82lLyq0S5TlYyc4QqqRp4ZMj-umm5_jTDUK0lJ49JsYAEAZvZvLHscxt-0D36yVpVeKwTqPveLCDDlII6tLYx_6pbhyW-dz2RsqYYA')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/80 to-transparent p-space-md flex flex-col justify-center">
+<span class="font-label-sm text-label-sm tracking-widest text-primary uppercase">Reserve Batch Status</span>
+<p class="font-headline-sm text-headline-sm text-on-surface max-w-lg mt-space-xs">Daily roast reconciliation active. Real-time extraction count synchronized across 3 bar terminals.</p>
+</div>
+</div>
+<div class="relative h-36 rounded-xl overflow-hidden shadow-md bg-surface-container-lowest flex items-center justify-between p-space-md">
+<div class="absolute inset-0 bg-cover bg-center opacity-25" data-alt="Crystal tumbler with slow iced cold brew coffee reflecting warm amber bar lamps in a moody boutique artisanal cafe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1t9vji7oEC4HmAd-ORydBCbcXChslPHteJvs_KcGkWlGYxYGmhaEm66v4RjUE3GRXQ2YL_r_fEjwWb9-NH9FCq7Ydb8e8Q_k1CGpEdaWTRSqIB0FXljA8d05nAvqymo0ByaD69zOZVofFQsjb5eRVA8G4FHY6NvklGUFLCckIoXZYBPjwTPug5IAvySuQqEQsSaU9KsEQIyanIkg6CGGp24AZbaWNdgCy2bO26QMwq6GSQlgtTb0K1g')"></div>
+<div class="relative z-10 flex flex-col justify-between h-full w-full">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Hourly Velocity</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Last 60 mins</span>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<span class="font-price-lg text-price-lg text-on-surface">54</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-space-xs">pulls total</span>
+</div>
+<!-- Velocity Sparkline SVG -->
+<svg class="w-32 h-10 text-primary" fill="none" viewbox="0 0 120 40">
+<path d="M0 32 L20 28 L40 34 L60 14 L80 18 L100 8 L120 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<path d="M0 32 L20 28 L40 34 L60 14 L80 18 L100 8 L120 12 L120 40 L0 40 Z" fill="currentColor" fill-opacity="0.1"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Metric Cards (4 in a row) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-sm flex flex-col justify-between min-h-[128px]">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md uppercase tracking-wider">Total Active Menu</span>
+<span class="material-symbols-outlined text-[20px] text-primary">local_cafe</span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface leading-none">10</span>
+<span class="font-label-md text-label-md text-secondary">Items Active</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Across 3 curated categories</span>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-sm flex flex-col justify-between min-h-[128px]">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary">Low Stock Alerts</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">warning</span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-space-sm">
+<span class="font-headline-xl text-headline-xl text-secondary leading-none">2</span>
+<span class="font-label-md text-label-md text-secondary">Critical SKU(s)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">≤ 6 units threshold limit</span>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-sm flex flex-col justify-between min-h-[128px]">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md uppercase tracking-wider text-error">Stockout Items</span>
+<span class="material-symbols-outlined text-[20px] text-error">block</span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-space-sm">
+<span class="font-headline-xl text-headline-xl text-error leading-none">1</span>
+<span class="font-label-md text-label-md text-error">Kiwi Smoothies</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Auto-disabled on Kiosk &amp; Web</span>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-sm flex flex-col justify-between min-h-[128px]">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md uppercase tracking-wider text-tertiary">Backend Sync</span>
+<span class="material-symbols-outlined text-[20px] text-primary">cloud_done</span>
+</div>
+<div class="flex items-center gap-space-sm mt-space-sm">
+<span class="w-3 h-3 rounded-full bg-primary-container inline-block shadow-[0_0_8px_rgba(212,175,55,0.4)]"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Sheets Healthy</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Synced 48 seconds ago</span>
+</div>
+</div>
+<!-- Filter and Search Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-low p-space-md rounded-xl shadow-sm">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/60 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-0 shadow-inner" id="inventorySearch" placeholder="Filter by SKU, drink name, or category..." type="text"/>
+</div>
+<!-- Filter Pills -->
+<div class="flex flex-wrap items-center gap-space-xs" id="filterContainer">
+<button class="filter-pill px-space-md py-space-xs rounded-full font-label-md text-label-md bg-secondary-container text-on-secondary-container shadow-sm transition-all" data-filter="all">
+          All Items (10)
+        </button>
+<button class="filter-pill px-space-md py-space-xs rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-filter="Hot Coffee">
+          Hot Coffee (6)
+        </button>
+<button class="filter-pill px-space-md py-space-xs rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-filter="Cold Brews">
+          Cold Brews (2)
+        </button>
+<button class="filter-pill px-space-md py-space-xs rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-filter="Smoothies">
+          Smoothies (2)
+        </button>
+<button class="filter-pill px-space-md py-space-xs rounded-full font-label-md text-label-md bg-surface-container text-secondary hover:text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-1" data-filter="low-stock">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+          Low Stock Only (2)
+        </button>
+</div>
+</div>
+<!-- Inventory Table Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="inventoryTable">
+<thead>
+<tr class="bg-surface-container-high/60 text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<th class="py-space-md px-space-lg">SKU / ID</th>
+<th class="py-space-md px-space-lg">Beverage / Product</th>
+<th class="py-space-md px-space-md">Category</th>
+<th class="py-space-md px-space-md text-right">Price</th>
+<th class="py-space-md px-space-lg text-center">In-Stock Units</th>
+<th class="py-space-md px-space-md text-center">Status</th>
+<th class="py-space-md px-space-lg text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="tableBody">
+<!-- Item 1: Espresso -->
+<tr class="item-row hover:bg-surface-container/40 transition-colors" data-category="Hot Coffee" data-name="Espresso" data-sku="COF-001" data-status="available" data-stock="35">
+<td class="py-space-md px-space-lg font-mono font-body-sm text-body-sm text-secondary">COF-001</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">coffee</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-tight">Espresso</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Signature House Roast • 30ml double ristretto</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm uppercase px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed-dim">Hot Coffee</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-lg text-price-lg text-on-surface">
+                ₹60
+              </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="stepper-btn dec-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="stock-display w-12 text-center font-headline-sm text-headline-sm text-on-surface">35</span>
+<button class="stepper-btn inc-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-primary-container/15 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  AVAILABLE
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="toggle-active-btn p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" title="Toggle active in online menu">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="edit-btn p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Edit details">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 2: Cappuccino -->
+<tr class="item-row hover:bg-surface-container/40 transition-colors" data-category="Hot Coffee" data-name="Cappuccino" data-sku="COF-002" data-status="available" data-stock="24">
+<td class="py-space-md px-space-lg font-mono font-body-sm text-body-sm text-secondary">COF-002</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">coffee</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-tight">Cappuccino</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Velveteen microfoam • Cocoa dust garnish</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm uppercase px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed-dim">Hot Coffee</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-lg text-price-lg text-on-surface">
+                ₹90
+              </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="stepper-btn dec-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="stock-display w-12 text-center font-headline-sm text-headline-sm text-on-surface">24</span>
+<button class="stepper-btn inc-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-primary-container/15 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  AVAILABLE
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="toggle-active-btn p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="edit-btn p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 3: Café Latte -->
+<tr class="item-row hover:bg-surface-container/40 transition-colors" data-category="Hot Coffee" data-name="Café Latte" data-sku="COF-003" data-status="available" data-stock="24">
+<td class="py-space-md px-space-lg font-mono font-body-sm text-body-sm text-secondary">COF-003</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">local_cafe</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-tight">Café Latte</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Steamed whole milk • Subtle rosette pour</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm uppercase px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed-dim">Hot Coffee</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-lg text-price-lg text-on-surface">
+                ₹110
+              </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="stepper-btn dec-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="stock-display w-12 text-center font-headline-sm text-headline-sm text-on-surface">24</span>
+<button class="stepper-btn inc-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-primary-container/15 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  AVAILABLE
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="toggle-active-btn p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="edit-btn p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 4: Flat White -->
+<tr class="item-row hover:bg-surface-container/40 transition-colors" data-category="Hot Coffee" data-name="Flat White" data-sku="COF-004" data-status="available" data-stock="28">
+<td class="py-space-md px-space-lg font-mono font-body-sm text-body-sm text-secondary">COF-004</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">coffee</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-tight">Flat White</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ristretto base • Dense microfoam cap</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm uppercase px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed-dim">Hot Coffee</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-lg text-price-lg text-on-surface">
+                ₹120
+              </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="stepper-btn dec-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="stock-display w-12 text-center font-headline-sm text-headline-sm text-on-surface">28</span>
+<button class="stepper-btn inc-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-primary-container/15 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  AVAILABLE
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="toggle-active-btn p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="edit-btn p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 5: Café Mocha -->
+<tr class="item-row hover:bg-surface-container/40 transition-colors" data-category="Hot Coffee" data-name="Café Mocha" data-sku="COF-005" data-status="available" data-stock="29">
+<td class="py-space-md px-space-lg font-mono font-body-sm text-body-sm text-secondary">COF-005</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">local_cafe</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-tight">Café Mocha</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Single estate Belgian dark cocoa ganache</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm uppercase px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed-dim">Hot Coffee</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-lg text-price-lg text-on-surface">
+                ₹120
+              </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="stepper-btn dec-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="stock-display w-12 text-center font-headline-sm text-headline-sm text-on-surface">29</span>
+<button class="stepper-btn inc-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-primary-container/15 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  AVAILABLE
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="toggle-active-btn p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="edit-btn p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 6: Caramel Macchiato -->
+<tr class="item-row hover:bg-surface-container/40 transition-colors" data-category="Hot Coffee" data-name="Caramel Macchiato" data-sku="COF-006" data-status="available" data-stock="31">
+<td class="py-space-md px-space-lg font-mono font-body-sm text-body-sm text-secondary">COF-006</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">coffee</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-tight">Caramel Macchiato</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">House-burnt Madagascar vanilla caramel</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm uppercase px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed-dim">Hot Coffee</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-lg text-price-lg text-on-surface">
+                ₹130
+              </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="stepper-btn dec-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="stock-display w-12 text-center font-headline-sm text-headline-sm text-on-surface">31</span>
+<button class="stepper-btn inc-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-primary-container/15 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  AVAILABLE
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="toggle-active-btn p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="edit-btn p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 7: Iced Shaken Espresso (LOW STOCK) -->
+<tr class="item-row bg-secondary-container/10 hover:bg-secondary-container/20 transition-colors" data-category="Cold Brews" data-name="Iced Shaken Espresso" data-sku="COF-007" data-status="low-stock" data-stock="6">
+<td class="py-space-md px-space-lg font-mono font-body-sm text-body-sm text-secondary font-semibold">COF-007</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-container/30 flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">water_full</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-tight">Iced Shaken Espresso</p>
+<span class="font-body-sm text-body-sm text-secondary">Arabica reserve beans nearing batch limit</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm uppercase px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed-dim">Cold Brews</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-lg text-price-lg text-on-surface">
+                ₹120
+              </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="stepper-btn dec-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="stock-display w-12 text-center font-headline-sm text-headline-sm text-secondary font-semibold">6</span>
+<button class="stepper-btn inc-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-secondary-container/40 text-secondary">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+                  LOW STOCK ⚠
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="toggle-active-btn p-1.5 rounded-lg text-secondary hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="edit-btn p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 8: Cold Brew -->
+<tr class="item-row hover:bg-surface-container/40 transition-colors" data-category="Cold Brews" data-name="Cold Brew" data-sku="COF-008" data-status="available" data-stock="23">
+<td class="py-space-md px-space-lg font-mono font-body-sm text-body-sm text-secondary">COF-008</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">glass_cup</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-tight">Cold Brew</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">24-hour steep • Ethiopian Yirgacheffe notes</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm uppercase px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed-dim">Cold Brews</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-lg text-price-lg text-on-surface">
+                ₹110
+              </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="stepper-btn dec-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="stock-display w-12 text-center font-headline-sm text-headline-sm text-on-surface">23</span>
+<button class="stepper-btn inc-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-primary-container/15 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  AVAILABLE
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="toggle-active-btn p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="edit-btn p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 9: Banana Smoothies (LOW STOCK) -->
+<tr class="item-row bg-secondary-container/10 hover:bg-secondary-container/20 transition-colors" data-category="Smoothies" data-name="Banana Smoothies" data-sku="SMO-001" data-status="low-stock" data-stock="4">
+<td class="py-space-md px-space-lg font-mono font-body-sm text-body-sm text-secondary font-semibold">SMO-001</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-container/30 flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">blender</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-tight">Banana Smoothies</p>
+<span class="font-body-sm text-body-sm text-secondary">Organic Greek yoghurt • Honey drizzle</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm uppercase px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed-dim">Smoothies</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-lg text-price-lg text-on-surface">
+                ₹150
+              </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="stepper-btn dec-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="stock-display w-12 text-center font-headline-sm text-headline-sm text-secondary font-semibold">4</span>
+<button class="stepper-btn inc-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-secondary-container/40 text-secondary">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+                  LOW STOCK ⚠
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="toggle-active-btn p-1.5 rounded-lg text-secondary hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="edit-btn p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 10: Kiwi Smoothies (OUT OF STOCK) -->
+<tr class="item-row bg-error-container/10 hover:bg-error-container/20 transition-colors opacity-85" data-category="Smoothies" data-name="Kiwi Smoothies" data-sku="SMO-002" data-status="out-of-stock" data-stock="0">
+<td class="py-space-md px-space-lg font-mono font-body-sm text-body-sm text-error font-semibold">SMO-002</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-error-container/30 flex items-center justify-center text-error flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">nutrition</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-tight">Kiwi Smoothies</p>
+<span class="font-body-sm text-body-sm text-error">Fresh green kiwi puree shipment pending</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm uppercase px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed-dim">Smoothies</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-lg text-price-lg text-on-surface line-through opacity-70">
+                ₹180
+              </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="stepper-btn dec-btn w-8 h-8 rounded-full bg-surface-container text-on-surface/40 flex items-center justify-center cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="stock-display w-12 text-center font-headline-sm text-headline-sm text-error font-semibold">0</span>
+<button class="stepper-btn inc-btn w-8 h-8 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-error-container/40 text-error">
+<span class="material-symbols-outlined text-[13px]">close</span>
+                  OUT OF STOCK ❌
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="toggle-active-btn p-1.5 rounded-lg text-error hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Item is paused on menu">
+<span class="material-symbols-outlined text-[20px]">toggle_off</span>
+</button>
+<button class="edit-btn p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Quick Summary Footer Bar Inside Card -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface">Showing 10 of 10 items</span>
+<span>•</span>
+<span>Re-order trigger set to ≤ 6 units</span>
+</div>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm uppercase">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> 7 Available</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> 2 Low Stock</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-error"></span> 1 Out of Stock</span>
+</div>
+</div>
+</div>
+<!-- Bottom Sync Info Banner -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container shadow-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">sync_alt</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Backend Connection: Data synced with MENU SHEET.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inventory locks automatically for pending online carts. Unpaid mobile tickets release held stock within 4 minutes.</p>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase px-space-md py-space-xs rounded-full bg-surface-container-lowest text-secondary">Latency: 28ms</span>
+<button class="p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Logic for Steppers, Live Filter, Resync Feedback -->
+<script>
+    (function initInventoryConsole() {
+      // Steppers behavior
+      document.querySelectorAll('.item-row').forEach(row => {
+        const decBtn = row.querySelector('.dec-btn');
+        const incBtn = row.querySelector('.inc-btn');
+        const display = row.querySelector('.stock-display');
+        const statusBadge = row.querySelector('.status-badge');
+
+        function updateStatus(val) {
+          row.setAttribute('data-stock', val);
+          if (val === 0) {
+            row.setAttribute('data-status', 'out-of-stock');
+            row.classList.remove('bg-secondary-container/10', 'hover:bg-secondary-container/20');
+            row.classList.add('bg-error-container/10', 'hover:bg-error-container/20');
+            statusBadge.className = 'status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-error-container/40 text-error';
+            statusBadge.innerHTML = '<span class="material-symbols-outlined text-[13px]">close</span> OUT OF STOCK &#10060;';
+            display.className = 'stock-display w-12 text-center font-headline-sm text-headline-sm text-error font-semibold';
+            if (decBtn) decBtn.disabled = true;
+          } else if (val <= 6) {
+            row.setAttribute('data-status', 'low-stock');
+            row.classList.remove('bg-error-container/10', 'hover:bg-error-container/20');
+            row.classList.add('bg-secondary-container/10', 'hover:bg-secondary-container/20');
+            statusBadge.className = 'status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-secondary-container/40 text-secondary';
+            statusBadge.innerHTML = '<span class="material-symbols-outlined text-[13px]">warning</span> LOW STOCK &#9888;';
+            display.className = 'stock-display w-12 text-center font-headline-sm text-headline-sm text-secondary font-semibold';
+            if (decBtn) decBtn.disabled = false;
+          } else {
+            row.setAttribute('data-status', 'available');
+            row.classList.remove('bg-secondary-container/10', 'hover:bg-secondary-container/20', 'bg-error-container/10', 'hover:bg-error-container/20');
+            statusBadge.className = 'status-badge inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-primary-container/15 text-primary';
+            statusBadge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> AVAILABLE';
+            display.className = 'stock-display w-12 text-center font-headline-sm text-headline-sm text-on-surface';
+            if (decBtn) decBtn.disabled = false;
+          }
+        }
+
+        if (incBtn) {
+          incBtn.addEventListener('click', () => {
+            let current = parseInt(display.textContent, 10) || 0;
+            current += 1;
+            display.textContent = current;
+            updateStatus(current);
+          });
+        }
+
+        if (decBtn) {
+          decBtn.addEventListener('click', () => {
+            let current = parseInt(display.textContent, 10) || 0;
+            if (current > 0) {
+              current -= 1;
+              display.textContent = current;
+              updateStatus(current);
+            }
+          });
+        }
+      });
+
+      // Search & Category Filters
+      const searchInput = document.getElementById('inventorySearch');
+      const filterPills = document.querySelectorAll('.filter-pill');
+      let activeCategory = 'all';
+
+      function applyFilters() {
+        const query = (searchInput.value || '').trim().toLowerCase();
+        const rows = document.querySelectorAll('.item-row');
+
+        rows.forEach(row => {
+          const sku = (row.getAttribute('data-sku') || '').toLowerCase();
+          const name = (row.getAttribute('data-name') || '').toLowerCase();
+          const category = row.getAttribute('data-category') || '';
+          const status = row.getAttribute('data-status') || '';
+
+          const matchesQuery = !query || sku.includes(query) || name.includes(query) || category.toLowerCase().includes(query);
+          
+          let matchesCategory = true;
+          if (activeCategory === 'low-stock') {
+            matchesCategory = (status === 'low-stock' || status === 'out-of-stock');
+          } else if (activeCategory !== 'all') {
+            matchesCategory = (category === activeCategory);
+          }
+
+          if (matchesQuery && matchesCategory) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', applyFilters);
+      }
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach(p => {
+            p.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+            p.classList.add('bg-surface-container', 'text-on-surface-variant');
+          });
+          pill.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          pill.classList.add('bg-secondary-container', 'text-on-secondary-container');
+
+          activeCategory = pill.getAttribute('data-filter');
+          applyFilters();
+        });
+      });
+
+      // Force Resync Visual Feedback
+      const resyncBtn = document.getElementById('resyncBtn');
+      const syncIcon = document.getElementById('syncIcon');
+      if (resyncBtn && syncIcon) {
+        resyncBtn.addEventListener('click', () => {
+          syncIcon.classList.add('animate-spin');
+          resyncBtn.classList.add('opacity-75');
+          setTimeout(() => {
+            syncIcon.classList.remove('animate-spin');
+            resyncBtn.classList.remove('opacity-75');
+          }, 1000);
+        });
+      }
+
+      // Active status toggle button
+      document.querySelectorAll('.toggle-active-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const icon = btn.querySelector('.material-symbols-outlined');
+          if (icon.textContent.trim() === 'toggle_on') {
+            icon.textContent = 'toggle_off';
+            btn.classList.add('text-error');
+            btn.classList.remove('text-on-surface-variant', 'text-secondary');
+          } else {
+            icon.textContent = 'toggle_on';
+            btn.classList.remove('text-error');
+            btn.classList.add('text-on-surface-variant');
+          }
+        });
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest py-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-7xl mx-auto px-margin md:px-margin-desktop"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-xl pb-space-lg"><div class="space-y-space-sm md:col-span-2"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary">SAMSONS CAFE</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Artisanal single-origin roasts, precision extraction, and bespoke epicurean pastries. Roasted in small batches daily for discerning coffee connoisseurs.</p><div class="flex items-center gap-space-sm pt-space-xs"><span class="inline-flex items-center gap-space-xs font-label-sm text-label-sm text-secondary bg-surface-container px-space-sm py-space-xs rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Roastery Batch #842 Active</span></div></div><div><h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface mb-space-sm">Operations</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="overview-dashboard" href="#">Brew Bar Dashboard</a></li><li><a class="hover:text-primary transition-colors" data-path="live-orders" href="#">Order Queue &amp; KDS</a></li><li><a class="hover:text-primary transition-colors" data-path="simple-inventory" href="#">Bean &amp; Dairy Stocks</a></li><li><a class="hover:text-primary transition-colors" data-path="payments" href="#">Reconciliation &amp; Tenders</a></li></ul></div><div><h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface mb-space-sm">Boutique &amp; Hours</h4><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Mon – Sun: 06:30 – 18:00<br/>Espresso Bar &amp; Tasting Lab<br/><span class="text-secondary">Curated Single Origins</span></p></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant"><p>© 2024 Samsons Cafe &amp; Roastery Ltd. All rights reserved.</p><div class="flex items-center gap-space-md"><span>Terminal POS v4.2.8</span><span>Secure TLS Extraction</span></div></div></div></footer></body></html>

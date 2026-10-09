@@ -1,10 +1,30 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+"use client";
+import { useEffect, useMemo, useState } from "react";
+import { Search } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { GoldButton } from "@/components/ui/GoldButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { MenuCheckout } from "@/components/menu/MenuCheckout";
 import { MenuCard } from "@/components/menu/MenuCard";
-import { fallbackMenu } from "@/lib/google-apps-script";
-export default function HomePage() { const featured = fallbackMenu.filter((item) => item.featured); return <><Header /><main className="page-shell"><section className="relative isolate min-h-[660px] overflow-hidden border-b border-[#3d312a]"><Image src="/images/hero/cafe-hero.png" alt="An elegant Samsons Cafe coffee service" fill priority className="-z-20 object-cover object-center opacity-50" /><div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0b0908] via-[#0b0908]/75 to-[#0b0908]/20" /><div className="container-luxury flex min-h-[660px] items-center py-24"><div className="max-w-2xl"><div className="mb-5 flex items-center gap-3"><span className="gold-line" /><span className="text-[10px] font-semibold tracking-[.28em] text-[#e9c07c]">SAMSONS PRIVATE RESERVE</span></div><h1 className="serif text-5xl font-medium leading-[.98] tracking-tight sm:text-6xl md:text-7xl">A quieter kind<br />of <em className="text-[#e9c07c]">indulgence.</em></h1><p className="mt-7 max-w-xl text-base leading-7 text-[#d1c5b4]">A private reserve for extraordinary coffee, crafted slowly and served with a little ceremony.</p><div className="mt-9 flex flex-wrap gap-4"><Link href="/menu"><GoldButton>EXPLORE THE MENU <ArrowRight size={15} /></GoldButton></Link><Link href="#reserve" className="inline-flex items-center px-5 text-xs font-bold tracking-[.12em] text-[#e9c07c] underline-offset-8 hover:underline">OUR HOUSE ROAST</Link></div></div></div></section><section id="reserve" className="container-luxury py-20 md:py-28"><div className="flex flex-col justify-between gap-8 md:flex-row md:items-end"><SectionHeading eyebrow="The Samsons selection" title="Poured with intention." description="A concise offering of our most-loved espresso rituals and quiet indulgences." /><Link href="/menu" className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#e9c07c] hover:text-[#e5c158]">VIEW FULL MENU <ArrowRight size={15} /></Link></div><div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{featured.map((item) => <MenuCard key={item.id} item={item} />)}</div></section><section className="border-y border-[#3d312a] bg-[#120e0c]"><div className="container-luxury grid gap-10 py-16 md:grid-cols-[1fr_auto] md:items-center"><div><span className="text-[10px] font-semibold tracking-[.25em] text-[#c8a261]">THE HOUSE PROMISE</span><h2 className="serif mt-4 text-3xl md:text-4xl">Excellence in every pour.</h2></div><p className="max-w-md text-sm leading-7 text-muted">Single-origin profiles, slow extractions and generous hospitality—made for the moments you choose to linger.</p></div></section></main><Footer /></>; }
+import { CategoryFilters } from "@/components/menu/CategoryFilters";
+import { ErrorState, LoadingState, EmptyState } from "@/components/ui/States";
+import { getMenu } from "@/lib/api";
+import type { MenuItem } from "@/types";
+export default function MenuPage() { const [menu, setMenu] = useState<MenuItem[]>([]); const [status, setStatus] = useState<"loading"|"ready"|"error">("loading"); const [category, setCategory] = useState("All"); const [search, setSearch] = useState(""); const [attempt, setAttempt] = useState(0); useEffect(() => { let active = true; getMenu().then((data) => { if (active) { setMenu(data); setStatus("ready"); } }).catch(() => { if (active) setStatus("error"); }); return () => { active = false; }; }, [attempt]); const categories = useMemo(() => [...new Set(menu.map((item) => item.category))], [menu]); const shown = useMemo(() => menu.filter((item) => {
+    if (category !== "All" && item.category !== category) return false;
+    const searchTerm = search.toLowerCase();
+    const text = `${item.name} ${item.description || ""}`.toLowerCase();
+    return text.includes(searchTerm);
+  }), [menu, category, search]); return <><Header /><main className="page-shell"><div className="container-luxury py-12 md:py-16"><div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end"><SectionHeading eyebrow="Samsons Private Reserve & Atelier" title="Curated Menu" description="Artisanal single-origin espresso, slow-steeped extractions, and velvety crafted treats poured to perfection." /><div className="panel flex items-center gap-3 rounded-xl px-4 py-3"><i className="size-2 rounded-full bg-[#c8a261]" /><span className="text-[10px] font-bold tracking-widest text-muted">BARISTA AT WORK</span></div></div>{status === "ready" && <div className="mt-12 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between"><CategoryFilters categories={categories} value={category} onChange={setCategory} /><label className="relative block lg:w-80">
+                  <Search aria-hidden="true" className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-[#a8988b]" size={18} />
+                  <span className="sr-only">Search menu</span>
+                  <input
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
+                    className="input-luxury pl-16"
+                    placeholder="Search coffee or beverages..."
+                    autoComplete="off"
+                    spellCheck="false"
+                    type="search"
+                  />
+                </label></div>}<div className="mt-8">{status === "loading" ? <LoadingState /> : status === "error" ? <div><ErrorState message="The menu could not be loaded. Please try again." /><button className="mt-4 rounded-xl border border-[#c8a261] px-6 py-3 text-[#e9c07c]" onClick={() => { setStatus("loading"); setAttempt((value) => value + 1); }}>Try again</button></div> : shown.length ? <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{shown.map((item) => <MenuCard key={item.id} item={item} />)}</div> : <EmptyState title={menu.length ? "No selections found" : "The menu is currently empty"} text={menu.length ? "Try another category or search term." : "Please check back soon or ask our staff for assistance."} />}</div><MenuCheckout /></div></main><Footer /></>; }

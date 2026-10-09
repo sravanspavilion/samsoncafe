@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Outfit, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-plus-jakarta" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 export const metadata: Metadata = {
   title: "SAMSONS CAFE | Cafe & Roastery",
@@ -22,7 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <link rel="icon" href="/favicon.png" />
       </head>
-      <body className={`${outfit.variable} ${playfair.variable}`}>
+      <body className={`${plusJakarta.variable} ${playfair.variable}`}>
         <CartProvider>{children}</CartProvider>
       </body>
     </html>

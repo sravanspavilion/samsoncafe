@@ -160,7 +160,7 @@ export function OrderHistory() {
                 Explore our curated roastery selections for your next pairing.
               </p>
               <Link
-                href="/menu"
+                href="/"
                 className="mt-6 inline-flex items-center gap-2 border border-[#c8a261] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#e9c07c] hover:bg-[#c8a261]/10"
               >
                 Explore Menu

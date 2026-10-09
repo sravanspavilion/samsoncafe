@@ -21,7 +21,7 @@ export default function CartPage() {
       <Header />
       <main className="page-shell">
         <div className="container-luxury py-12 md:py-16">
-          <Link href="/menu" className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#e9c07c]">
+          <Link href="/" className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#e9c07c]">
             <ArrowLeft size={16} /> CONTINUE SHOPPING
           </Link>
 

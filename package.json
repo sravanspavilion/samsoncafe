@@ -2,7 +2,44 @@
   "name": "samsons-cafe",
   "version": "1.0.0",
   "private": true,
-  "scripts": { "dev": "next dev", "build": "next build --webpack", "start": "next start", "lint": "eslint ." },
-  "dependencies": { "lucide-react": "^0.468.0", "next": "latest", "react": "latest", "react-dom": "latest" },
-  "devDependencies": { "@tailwindcss/postcss": "latest", "@types/node": "latest", "@types/react": "latest", "@types/react-dom": "latest", "eslint": "latest", "eslint-config-next": "latest", "tailwindcss": "latest", "typescript": "latest" }
+  "description": "A premium, responsive ordering experience built with Next.js App Router, TypeScript, Tailwind CSS, local images, and a server-side Google Apps Script adapter.",
+  "homepage": "https://github.com/sravanspavilion/samsoncafe#readme",
+  "bugs": {
+    "url": "https://github.com/sravanspavilion/samsoncafe/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sravanspavilion/samsoncafe.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "iron-session": "^9.0.1",
+    "lucide-react": "^0.468.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "recharts": "^3.10.1",
+    "sonner": "^2.0.8",
+    "swr": "^2.5.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/recharts": "^1.8.29",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
 }
