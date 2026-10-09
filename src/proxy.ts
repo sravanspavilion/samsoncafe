@@ -5,7 +5,7 @@ import { sessionOptions, AdminSession } from "@/lib/auth";
 
 const protectedPaths = ["/admin", "/api/admin"];
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const isProtected = protectedPaths.some((path) =>
