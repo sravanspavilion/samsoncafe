@@ -17,6 +17,18 @@ npm run lint
 npm run build
 ```
 
+## Environment variables
+
+Copy `.env.local.example` to `.env.local` and fill in:
+
+```env
+GOOGLE_APPS_SCRIPT_URL=https://script.google.com/macros/s/.../exec
+ADMIN_PASSWORD=choose-a-strong-admin-password
+SESSION_SECRET=a-random-string-at-least-32-characters-long
+```
+
+`SESSION_SECRET` must be at least 32 characters (an `iron-session` requirement) — the admin routes fail if it is missing. All three variables are server-only; never prefix them with `NEXT_PUBLIC_`.
+
 ## Images
 
 Local placeholders live in `public/images/hero`, `public/images/menu`, and `public/images/logo`. They are sourced from the attached Stitch references so the initial visual treatment remains consistent. Replace them with licensed production photography, retaining the same paths or updating the `IMAGE` values from the sheet. Use local, optimized WebP/AVIF where possible.
@@ -46,8 +58,16 @@ Before connecting production data, confirm the existing Apps Script's exact requ
 
 ## Deployment
 
-Deploy to Vercel by importing the repository, adding `GOOGLE_APPS_SCRIPT_URL` to the project environment variables, and using the default build command (`npm run build`). Do not expose this variable to the client.
+Deploy to Vercel by importing the repository, setting the environment variables below in the project's Environment Variables settings, and using the default build command (`npm run build`):
 
-## Admin note
+- `GOOGLE_APPS_SCRIPT_URL`
+- `ADMIN_PASSWORD`
+- `SESSION_SECRET` (at least 32 characters)
 
-`/admin` intentionally has no authentication for this prototype. Add authentication and authorization before any public launch.
+These are server-only; do not prefix them with `NEXT_PUBLIC_`.
+
+## Admin authentication
+
+`/admin` and `/api/admin/*` are protected by a password-based session (`iron-session`) enforced in `src/proxy.ts`. Unauthenticated requests are redirected to `/admin/login`, and the admin entry point is intentionally hidden from the public site navigation.
+
+Set `ADMIN_PASSWORD` and `SESSION_SECRET` to enable it. Before a public launch, replace the shared password with per-user accounts and rotate `SESSION_SECRET`.
