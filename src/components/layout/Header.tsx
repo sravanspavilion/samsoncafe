@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ShoppingBag, Shield } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import { formatINR } from "@/lib/utils";
@@ -45,21 +45,6 @@ export function Header() {
           </Link>
           <Link href="/cart" className="hidden border border-[var(--primary)] px-3 py-2 text-[10px] font-bold tracking-widest text-[var(--primary-fixed-dim)] sm:inline-block">
             MY ORDER {totalItems > 0 && `(${formatINR(totalPrice)})`}
-          </Link>
-          <Link
-            href="/admin"
-            className="hidden md:inline-flex items-center gap-2 rounded-lg border border-[var(--primary)] bg-transparent px-4 py-2 text-[10px] font-bold tracking-widest text-[var(--primary-fixed-dim)] hover:bg-[var(--primary)] hover:text-[var(--on-primary)] transition-all"
-            aria-label="Admin Panel"
-          >
-            <Shield size={14} />
-            <span>ADMIN</span>
-          </Link>
-          <Link
-            href="/admin"
-            className="md:hidden grid size-10 place-items-center rounded-full border border-[var(--primary)] bg-transparent text-[var(--primary-fixed-dim)] hover:bg-[var(--primary)] hover:text-[var(--on-primary)] transition-all"
-            aria-label="Admin Panel"
-          >
-            <Shield size={18} />
           </Link>
         </div>
       </div>
