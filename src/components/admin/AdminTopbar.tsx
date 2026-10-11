@@ -36,7 +36,7 @@ export function AdminTopbar() {
       <header className="sticky top-0 z-40 border-b border-[var(--outline-variant)] bg-[var(--surface-container-lowest)]/95 backdrop-blur-xl">
         <div className="container-luxury flex h-16 items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/admin" className="flex items-center gap-2">
+          <Link href="/" aria-label="Samsons Cafe — back to ordering menu" className="flex items-center gap-2">
             <span aria-hidden className="grid size-8 place-items-center rounded-full border border-[var(--primary)] serif text-base text-[var(--primary-fixed-dim)]">S</span>
             <span className="hidden sm:block serif text-lg font-semibold tracking-wide text-[var(--on-surface)]">SAMSONS CAFE</span>
           </Link>
@@ -142,7 +142,7 @@ export function AdminTopbar() {
       {showMobileMenu && (
         <aside className="lg:hidden fixed top-0 right-0 bottom-0 z-50 w-72 bg-[var(--surface-container-low)] border-l border-[var(--outline-variant)] shadow-xl p-4">
           <div className="flex items-center justify-between mb-6">
-            <span className="serif text-xl text-[var(--on-surface)]">SAMSONS CAFE</span>
+            <Link href="/" onClick={() => setShowMobileMenu(false)} className="serif text-xl text-[var(--on-surface)]">SAMSONS CAFE</Link>
             <button onClick={() => setShowMobileMenu(false)} className="p-2 text-[var(--on-surface-variant)]">
               ✕
             </button>

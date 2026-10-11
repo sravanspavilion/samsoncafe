@@ -59,10 +59,13 @@ export async function fetchMenuFromAppsScript(): Promise<MenuItem[]> {
 }
 export async function submitOrderToAppsScript(order: OrderPayload, orderId: string): Promise<void> {
   const url = process.env.GOOGLE_APPS_SCRIPT_URL;
-  if (!url) return;
-  // TODO: Adjust `action` and the payload shape to exactly match the existing Apps Script once shared.
-  const response = await fetch(url, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ action: "createOrder", orderId, ...order }) });
+  if (!url) throw new Error("Ordering is not configured");
+  const response = await fetch(url, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ action: "createOrder", orderId, customerName: order.customerName, contact: order.contact, pickupNote: order.pickupNote, items: order.items }) });
   if (!response.ok) throw new Error("Apps Script order request failed");
+  const result = await response.json();
+  if (result?.success !== true || result?.error || result?.orderId !== orderId) {
+    throw new Error("Google Sheets did not confirm the order");
+  }
 }
 
 function groupOrderRecords(records: OrderRecord[]) {
@@ -91,7 +94,8 @@ export async function fetchOrdersFromAppsScript(): Promise<import("@/types").Ord
     const response = await fetch(`${url}?action=orders`, { cache: "no-store" });
     if (!response.ok) throw new Error("Apps Script orders request failed");
     const json = await response.json();
-    const rows = Array.isArray(json) ? json : json.items ?? json.data;
+    // The deployed backend returns grouped orders under `orders` ({success,count,orders}).
+    const rows = Array.isArray(json) ? json : json.orders ?? json.items ?? json.data;
     if (!Array.isArray(rows)) throw new Error("Unexpected Apps Script orders response");
     return rows as import("@/types").OrderHistoryItem[];
   } catch {

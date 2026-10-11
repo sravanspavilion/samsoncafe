@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from "recharts";
 import { TrendingUp, Package, ShoppingBag, AlertTriangle, Clock, Coffee } from "lucide-react";
@@ -73,6 +74,20 @@ export default function AdminOverviewPage() {
 
   return (
     <div className="space-y-8">
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Link href="/admin/orders" className="admin-card block p-6 transition-colors hover:border-[var(--primary)] focus-visible:outline-2 focus-visible:outline-[var(--primary)]">
+          <ShoppingBag className="mb-3 text-[var(--primary)]" size={24} aria-hidden />
+          <h2 className="serif text-2xl">Orders</h2>
+          <p className="mt-2 text-sm text-[var(--on-surface-variant)]">View incoming orders and update preparation, pickup, and completion status.</p>
+          <span className="mt-4 inline-block text-sm font-semibold text-[var(--primary)]">Open orders →</span>
+        </Link>
+        <Link href="/admin/menu" className="admin-card block p-6 transition-colors hover:border-[var(--primary)] focus-visible:outline-2 focus-visible:outline-[var(--primary)]">
+          <Coffee className="mb-3 text-[var(--primary)]" size={24} aria-hidden />
+          <h2 className="serif text-2xl">Menu</h2>
+          <p className="mt-2 text-sm text-[var(--on-surface-variant)]">Manage menu items, prices, availability, and view current stock.</p>
+          <span className="mt-4 inline-block text-sm font-semibold text-[var(--primary)]">Manage menu →</span>
+        </Link>
+      </div>
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>

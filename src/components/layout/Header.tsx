@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, Shield } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import { formatINR } from "@/lib/utils";
@@ -34,7 +34,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <Link href="/cart" aria-label={`View cart, ${totalItems} items`} className="relative grid size-10 place-items-center rounded-full bg-[var(--surface-container-high)] text-[var(--primary-fixed-dim)] hover:bg-[var(--surface-container-highest)]">
             <ShoppingBag size={19} />
             {totalItems > 0 && (
@@ -45,6 +45,9 @@ export function Header() {
           </Link>
           <Link href="/cart" className="hidden border border-[var(--primary)] px-3 py-2 text-[10px] font-bold tracking-widest text-[var(--primary-fixed-dim)] sm:inline-block">
             MY ORDER {totalItems > 0 && `(${formatINR(totalPrice)})`}
+          </Link>
+          <Link href="/admin" aria-label="Open admin panel" title="Admin panel" className="grid size-10 place-items-center rounded-full border border-[var(--primary)] bg-[var(--primary)] text-[var(--on-primary)] transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]">
+            <Shield size={20} aria-hidden />
           </Link>
         </div>
       </div>

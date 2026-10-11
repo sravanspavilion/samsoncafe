@@ -62,6 +62,10 @@ export function parseAdminResponse(data: unknown, action: string | null): unknow
       }
       return Array.from(grouped.values());
     }
+    // Grouped orders (current backend contract): each order already has
+    // items[]/total/status, so it is returned untouched. The flat-row branch
+    // below is legacy (old "price = line total" sheets) and is only used as a
+    // fallback when the backend emits flat rows instead of grouped orders.
     if (!Array.isArray(orders) || !orders.every((order) =>
       order !== null && typeof order === "object" && typeof order.orderId === "string" &&
       typeof order.status === "string" && Array.isArray(order.items) &&

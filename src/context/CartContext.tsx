@@ -8,11 +8,21 @@ const CartContext = createContext<CartContextValue | undefined>(undefined);
 const STORAGE_KEY = "samsons-cafe-cart";
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
-  const [items, setItems] = useState<CartLine[]>(() => {
-    if (typeof window === "undefined") return [];
-    try { return JSON.parse(window.localStorage.getItem(STORAGE_KEY) ?? "[]") as CartLine[]; } catch { return []; }
-  });
-  useEffect(() => { window.localStorage.setItem(STORAGE_KEY, JSON.stringify(items)); }, [items]);
+  // Always start empty so the first client render matches the server-rendered HTML.
+  // The persisted cart is loaded from localStorage after mount instead.
+  const [items, setItems] = useState<CartLine[]>([]);
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem(STORAGE_KEY);
+      if (stored) setItems(JSON.parse(stored) as CartLine[]);
+    } catch { /* ignore malformed storage */ }
+    setHydrated(true);
+  }, []);
+  useEffect(() => {
+    if (!hydrated) return; // avoid overwriting storage before the initial load
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  }, [items, hydrated]);
   const addItem = (item: MenuItem, quantity = 1) => {
     const current = items.find((line) => line.id === item.id)?.quantity ?? 0;
     if (item.status !== "available" || current + quantity > item.stock) return false;

@@ -41,18 +41,22 @@ Add the deployment endpoint to `.env.local` (never prefix it with `NEXT_PUBLIC_`
 GOOGLE_APPS_SCRIPT_URL=https://script.google.com/macros/s/.../exec
 ```
 
-The browser only calls `/api/menu` and `/api/orders`. Those routes call `src/lib/google-apps-script.ts` server-side, use fresh (`no-store`) menu reads, and fall back to local data when the endpoint is missing or unavailable.
+The browser only calls `/api/menu` and `/api/orders`. Those routes call `src/lib/google-apps-script.ts` server-side, use fresh (`no-store`) menu reads, and report a failure if the menu or order endpoint is missing or unavailable. Orders succeed only after Apps Script confirms the order ID.
 
 The expected menu sheet columns are: `ITEM ID`, `ITEM NAME`, `PRICE`, `IMAGE`, `STOCK`, `STATUS`, `CATEGORY`.
-The expected order sheet columns are: `ORDER ID`, `TIME`, `ITEM ID`, `NAME`, `QTY`, `PRICE`.
+The recommended Orders columns are: `ORDER ID`, `TIME`, `DATE`, `ITEM ID`, `NAME`, `QUANTITY`, `LINE TOTAL`, `STATUS`, `CUSTOMER NAME`, `CONTACT`, `PICKUP NOTE`, `TOKEN NUMBER`. `QTY` is also supported. `PRICE` stores the unit price; `LINE TOTAL` stores quantity × price. Missing required columns are appended automatically.
 
-Before connecting production data, confirm the existing Apps Script's exact request method, action names, body format, and response JSON. The marked TODOs in `google-apps-script.ts` are the only intended adaptation points.
+Use `google-apps-script-samsons-cafe-updated.gs` in the spreadsheet's bound Apps Script project. Use `menu` and `order` tabs; title-case aliases are also supported. Menu is the stock source of truth; ordering 1 Espresso changes its STOCK from 34 to 33. The admin inventory is derived directly from the menu sheet. Quantities and prices are checked against Menu, duplicate item lines are combined, and stock cannot go below zero. A script lock serializes order creation, and an already recorded order ID is not deducted twice. Ordinary write errors restore previous values; Sheets is not a transactional database and forced execution termination still needs manual reconciliation.
+
+After updating the script, choose Deploy → Manage deployments → Edit → New version → Deploy. Keep the existing web app URL in `GOOGLE_APPS_SCRIPT_URL`. The web app must execute as the spreadsheet owner and be accessible to the server. Updating this repository alone does not update the live Apps Script.
+
+Run `node --test tests/order-stock.test.mjs` for isolated stock tests. Before launch, test against a copy of the spreadsheet: order one item, verify menu stock, admin inventory, and the order row, then check insufficient-stock rejection. No live stock is modified by the automated tests.
 
 ## Testing checklist
 
 - Add products, increase/decrease quantities, refresh, and confirm the local cart persists.
 - Verify stock caps and unavailable products cannot be added.
-- Submit an order with the endpoint unset (a generated order ID still proves the UI flow).
+- Submit an order with the endpoint unset and confirm it fails without showing a success page.
 - Add the Apps Script endpoint and verify menu reads and order writes against a test spreadsheet.
 - Review desktop, tablet, and mobile layouts; keyboard focus; and empty/error states.
 
@@ -68,6 +72,6 @@ These are server-only; do not prefix them with `NEXT_PUBLIC_`.
 
 ## Admin authentication
 
-`/admin` and `/api/admin/*` are protected by a password-based session (`iron-session`) enforced in `src/proxy.ts`. Unauthenticated requests are redirected to `/admin/login`, and the admin entry point is intentionally hidden from the public site navigation.
+`/admin` and `/api/admin/*` are protected by a password-based session (`iron-session`) enforced in `src/proxy.ts`. Unauthenticated requests are redirected to `/admin/login`, and the public header provides an admin shield icon. Clicking the cafe logo returns to the ordering menu.
 
 Set `ADMIN_PASSWORD` and `SESSION_SECRET` to enable it. Before a public launch, replace the shared password with per-user accounts and rotate `SESSION_SECRET`.
