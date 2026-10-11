@@ -57,15 +57,56 @@ export async function fetchMenuFromAppsScript(): Promise<MenuItem[]> {
     });
   return result;
 }
-export async function submitOrderToAppsScript(order: OrderPayload, orderId: string): Promise<void> {
+export class OrderSubmissionError extends Error {
+  constructor(message: string, public readonly status = 502) {
+    super(message);
+    this.name = "OrderSubmissionError";
+  }
+}
+
+export async function submitOrderToAppsScript(order: OrderPayload, orderId: string): Promise<string> {
   const url = process.env.GOOGLE_APPS_SCRIPT_URL;
-  if (!url) throw new Error("Ordering is not configured");
-  const response = await fetch(url, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ action: "createOrder", orderId, customerName: order.customerName, contact: order.contact, pickupNote: order.pickupNote, items: order.items }) });
-  if (!response.ok) throw new Error("Apps Script order request failed");
+  if (!url) throw new OrderSubmissionError("Ordering is not configured. Please contact café staff.", 503);
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify({
+      // The live backend only accepts the legacy `placeOrder` action; the updated
+      // script keeps it as an alias for createOrder, so this works with both.
+      action: "placeOrder",
+      orderId,
+      customerName: order.customerName,
+      contact: order.contact,
+      pickupNote: order.pickupNote,
+      items: order.items.map((item) => ({
+        itemId: item.id,
+        id: item.id,
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price,
+      })),
+    }),
+  });
+  if (response.status === 405) {
+    throw new OrderSubmissionError(
+      "Ordering is disabled in the café backend: the deployed Apps Script does not accept orders yet (HTTP 405). Run scripts/deploy-apps-script.sh to publish the updated script.",
+      503,
+    );
+  }
+  if (!response.ok) throw new OrderSubmissionError("The ordering service is unavailable. Please contact café staff.");
   const result = await response.json();
-  if (result?.success !== true || result?.error || result?.orderId !== orderId) {
+  if (result?.error === "Invalid POST action") {
+    throw new OrderSubmissionError("Ordering is temporarily unavailable because the café backend needs an update. Please contact café staff.", 503);
+  }
+  if (typeof result?.error === "string" && /(?: is out of stock\.| has only \d+ item\(s\) available\. Requested: \d+)$/.test(result.error)) {
+    throw new OrderSubmissionError(result.error, 409);
+  }
+  if (result?.success !== true || result?.error) {
     throw new Error("Google Sheets did not confirm the order");
   }
+  const confirmedId = String(result?.orderId || orderId);
+  if (!confirmedId) throw new Error("Google Sheets did not confirm the order");
+  return confirmedId;
 }
 
 function groupOrderRecords(records: OrderRecord[]) {
